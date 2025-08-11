@@ -1,46 +1,45 @@
-# Astro Starter Kit: Basics
+# Decorazón
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+**Decorazón** es una plataforma web para la gestión y presentación de servicios de decoración de eventos.  
+El proyecto está orientado a facilitar la creación, organización y difusión de celebraciones personalizadas como:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Baby showers
+- Cumpleaños
+- Revelaciones de género
+- Decoraciones temáticas
+- Eventos especiales
 
-## 🚀 Project Structure
+## Sobre la empresa
 
-Inside of your Astro project, you'll see the following folders and files:
+Decorazón es una empresa ubicada en **Gran Canaria** especializada en:
+- Decoraciones con globos
+- Montajes personalizados para eventos
+- Papelería personalizada
+- Detalles únicos para celebraciones
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Su filosofía se centra en crear momentos memorables con diseños únicos y un toque hecho con amor.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Funcionalidades de la web
 
-## 🧞 Commands
+- Catálogo visual de eventos realizados
+- Formulario de contacto para solicitudes y presupuestos
+- Galerías por tipo de evento
+- Información sobre servicios y paquetes
+- Posibilidad de personalizar y solicitar montajes
 
-All commands are run from the root of the project, from a terminal:
+## Tecnologías utilizadas
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+- HTML5, CSS3, JavaScript
+- Astro.js
+- Tailwind CSS
 
-## 👀 Want to learn more?
+## Estado del proyecto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+En desarrollo / versión interna.  
+El repositorio es **privado** para proteger el código y recursos de la empresa.
+
+## Contacto
+
+📩 **Email:** decorazonlaspalmas@gmail.com  
+📍 **Ubicación:** Gran Canaria, España  
+📷 **Instagram:** [@decorazonlp](https://www.instagram.com/decorazonlp)
