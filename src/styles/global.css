@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #DE96A1;
+    --color-secondary: #E8B3A3;
+    
+  
+   
+  
+    --font-special: "Amertha", sans-serif;
+  
+    
+  }
+
+  @font-face {
+    font-family: "Amertha";
+    src: url("/fonts/amertha.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    transition: background-color 1000ms;
+  }
+  
+  .text-stroke {
+    -webkit-text-stroke: 0.1rem white;
+  }
