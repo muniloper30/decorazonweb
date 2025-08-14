@@ -5,10 +5,10 @@ export enum Device { // Enum para definir los tipos de dispositivos
 }
 
 export enum Target { // Enum para definir los tipos de destino al abrir los enlaces
-    BLANK = '_blank',
-    SELF = '_self',
-    PARENT = '_parent',
-    TOP = '_top',
+    BLANK = '_blank', // Abrir en una nueva pestaña
+    SELF = '_self',  // Abrir en la misma pestaña
+    PARENT = '_parent', // Abrir en la pestaña padre
+    TOP = '_top', // Abrir en la pestaña superior
 }
 
 export type Props = {
@@ -22,10 +22,10 @@ export type Props = {
 const { href, text, device, target, extraClasses } = Astro.props;
 
 const desktopClasses = // Clases CSS para enlaces en dispositivos de escritorio
-  "relative text-sm/6 font-semibold text-white after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+  "relative text-sm/6 font-semibold text-black after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
 
 const mobileClasses = // Clases CSS para enlaces en dispositivos móviles
-  "hover:text-primary-light border-primary-light -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white"
+  "hover:text-secondary border-primary-light -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white"
 ---
 
 <a

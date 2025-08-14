@@ -1,8 +1,44 @@
 ---
-import Header from "../components/Header.astro";
+import bgHero from "../assets/bg-hero-pruebas.png";
+import logo from "../assets/d'corazon-black.png";
+import { Image } from "astro:assets";
 ---
 
-<Header />
 
+<section
+  class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center bg-pink-300"
+  style={`background-image:url(${bgHero.src}); background-size:cover; background-position:right center;`}
+>
+  <!-- Contenedor para centrar el contenido y dar padding lateral -->
+  <div class="mx-auto w-full max-w-7xl px-6">
+    <!-- Tarjeta clara para contraste sobre el fondo -->
+    <div class="max-w-xl rounded-2xl p-8 sm:p-10 bg-white/20 backdrop-blur-sm shadow-sm">
+      <!-- Logo optimizado con astro:assets. loading="eager" porque es above-the-fold -->
+      <Image
+        src={logo}
+        alt="De'Corazón"
+        width={220}
+        height={70}
+        loading="eager"
+        class="mb-3 h-auto w-auto"
+      />
 
+      <h1 class="text-3xl sm:text-5xl font-bold leading-tight text-gray-900">
+        Decoraciones con amor para tus momentos especiales
+      </h1>
 
+      <p class="mt-3 text-sm sm:text-base text-gray-800">
+        Realizamos la decoración perfecta para cualquier ocasión.
+      </p>
+
+      <!-- Botón que envía a la página de formulario -->
+      <a
+        href="/form"
+        class="mt-6 inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold shadow bg-rose-300 hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
+        aria-label="Ir al formulario de servicios"
+      >
+        Solicitar un evento
+      </a>
+    </div>
+  </div>
+</section>
