@@ -1,0 +1,35 @@
+---
+export enum Device { // Enum para definir los tipos de dispositivos
+  DESKTOP = 'desktop',
+  MOBILE = 'mobile',
+}
+
+export enum Target { // Enum para definir los tipos de destino al abrir los enlaces
+    BLANK = '_blank',
+    SELF = '_self',
+    PARENT = '_parent',
+    TOP = '_top',
+}
+
+export type Props = {
+    href: string; // URL del enlace
+    text: string; // Texto del enlace
+    device?: Device; // Tipo de dispositivo para el que se muestra el enlace
+    target?: Target; // Tipo de destino al abrir el enlace
+    extraClasses?: string; // Clases CSS adicionales para el enlace
+}
+
+const { href, text, device, target, extraClasses } = Astro.props;
+
+const desktopClasses = // Clases CSS para enlaces en dispositivos de escritorio
+  "relative text-sm/6 font-semibold text-white after:absolute after:bottom-[-2px] after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+
+const mobileClasses = // Clases CSS para enlaces en dispositivos móviles
+  "hover:text-primary-light border-primary-light -mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white"
+---
+
+<a
+  href={href}
+  class:list={[device === Device.DESKTOP ? desktopClasses : mobileClasses, extraClasses]}
+  target={target}>{text}
+</a>
