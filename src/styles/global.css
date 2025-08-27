@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #DE96A1;
-    --color-secondary: #E8B3A3;
-    
-     --font-special: "Amertha", sans-serif;
-  
-    
-  }
+  --color-primary: #de96a1;
+  --color-secondary: #e8b3a3;
 
-  @font-face {
-    font-family: "Amertha";
-    src: url("/fonts/amertha.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    transition: background-color 1000ms;
-  }
-  
-  .text-stroke {
-    -webkit-text-stroke: 0.1rem white;
-  }
+  --font-special: "Amertha", sans-serif;
+}
+
+@font-face {
+  font-family: "Amertha";
+  src: url("/fonts/amertha.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  transition: background-color 1000ms;
+  scroll-behavior: smooth;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 0.1rem white;
+}
