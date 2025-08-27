@@ -1,44 +1,90 @@
 ---
-import bgHero from "../assets/bg-hero-pruebas.png";
-import logo from "../assets/d'corazon-black.png";
+import bgHero from "../assets/bgHero3reverse.png";
+import logoBlack from "../assets/dcorazon-black.png";
 import { Image } from "astro:assets";
+import LogoDecorazon from "../assets/logoDcorazon.png";
 ---
 
-
-<section
-  class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center bg-pink-300"
-  style={`background-image:url(${bgHero.src}); background-size:cover; background-position:right center;`}
->
-  <!-- Contenedor para centrar el contenido y dar padding lateral -->
-  <div class="mx-auto w-full max-w-7xl px-6">
-    <!-- Tarjeta clara para contraste sobre el fondo -->
-    <div class="max-w-xl rounded-2xl p-8 sm:p-10 bg-white/20 backdrop-blur-sm shadow-sm">
-      <!-- Logo optimizado con astro:assets. loading="eager" porque es above-the-fold -->
-      <Image
-        src={logo}
-        alt="De'Corazón"
-        width={220}
-        height={70}
-        loading="eager"
-        class="mb-3 h-auto w-auto"
-      />
-
-      <h1 class="text-3xl sm:text-5xl font-bold leading-tight text-gray-900">
-        Decoraciones con amor para tus momentos especiales
-      </h1>
-
-      <p class="mt-3 text-sm sm:text-base text-gray-800">
-        Realizamos la decoración perfecta para cualquier ocasión.
-      </p>
-
-      <!-- Botón que envía a la página de formulario -->
+<section class="grid grid-cols-[1fr_15fr] gap-0">
+  <!-- Barra lateral con información de contacto y redes sociales -->
+  <aside class="flex flex-col items-center gap-3 pt-14">
+    <p class="transform rotate-270 mt-">CONTÁCTANOS</p>
+    <hr class="border-l border-gray-300 h-20 mt-17" />
+    <div class="flex flex-col gap-4 mt-4">
       <a
-        href="/form"
-        class="mt-6 inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold shadow bg-rose-300 hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
-        aria-label="Ir al formulario de servicios"
+        href="https://www.instagram.com/decorazonlp/"
+        target="_blank"
+        aria-label="Instagram"
+        class="hover:scale-110 transition-transform"
       >
-        Solicitar un evento
+        <img src="/icons/instagram.svg" alt="Instagram" class="w-4 h-4" />
       </a>
+      <a
+        href="https://wa.me/34634931297"
+        target="_blank"
+        aria-label="WhatsApp"
+        class="hover:scale-110 transition-transform"
+      >
+        <img src="/icons/whatsapp.svg" alt="WhatsApp" class="w-4 h-4" />
+      </a>
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=decorazonlaspalmas@gmail.com"
+        target="_blank"
+        aria-label="Gmail"
+        class="hover:scale-110 transition-transform"
+      >
+        <img src="/icons/gmail.svg" alt="Gmail" class="w-4 h-4" />
+      </a>
+    </div>
+  </aside>
+
+  <!-- Contenido principal Hero -->
+
+  <div
+    class="relative p-4 mb-2 mr-17 -ml-5 h-[800px] flex items-center justify-center flex-col"
+    style={`background-image:url(${bgHero.src}); background-size:cover; background-position:right center;`}
+  >
+    <!-- Contenedor logos hero -->
+    <div class="absolute top-5 w-full flex justify-between px-10">
+      <Image class="h-auto md:w-[150px]" src={logoBlack} alt="Logo Decorazon" />
+      <Image
+        class="h-auto md:w-[150px]"
+        src={LogoDecorazon}
+        alt="Logo Decorazon"
+      />
+    </div>
+    <br />
+    <!-- Contenedor video -->
+    <div class="relative w-[900px] h-[500px]">
+      <!-- Video -->
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="/videoHero.mp4" type="video/mp4" />
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+
+      <!-- Texto superpuesto -->
+      <p
+        class="absolute bottom-[70px] left-[-80px] flex items-center justify-center text-white text-7xl font-bold text-start p-4"
+      >
+        Decoraciones <br />
+        con amor para <br />
+        tus momentos <br />
+        especiales
+      </p>
+    </div>
+<div class="w-[900px] flex justify-end mt-4">
+
+  <p class="text-3xl text-end font-bold">Momentos especiales <br> recuerdos inolvidables</p>
+</div>
+    <div class="w-[900px] flex justify-end mt-4">
+      <button
+        class="bg-transparent text-black border border-black
+           hover:bg-black hover:text-white
+           transition-colors duration-500
+           py-2 px-4 cursor-pointer"
+      >
+        ¡Solicita presupuesto!
+      </button>
     </div>
   </div>
 </section>
