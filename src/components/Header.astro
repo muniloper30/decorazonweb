@@ -2,11 +2,12 @@
 import HeaderLink, { Target, Device } from "./HeaderLink.astro";
 import { Image } from "astro:assets";
 import LogoDecorazon from "../assets/logoDcorazon.png";
+import LogoDecorazon2 from "../assets/dcorazon-black.png";
 ---
 
-<header class="fixed top-0 z-60 w-screen">
+<header class="top-0 z-60 w-screen flex justify-center items-center">
   <nav
-    class="mx-auto flex max-w-10xl items-center justify-between px-4 py-1 pb-0 uppercase lg:px-8 bg-rose-300 shadow-2xl"
+    class="flex md:flex-col-reverse flex-row-reverse items-center gap-7 px-4 py-4 uppercase"
   >
     <div class="flex">
       <div class="hidden lg:flex lg:gap-x-12">
@@ -14,7 +15,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         <HeaderLink text="Galería" href="/Gallery" device={Device.DESKTOP} />
         <HeaderLink
           text="Servicios"
-          href="/#Services"
+          href="/#services"
           device={Device.DESKTOP}
         />
         <HeaderLink text="Contacto" href="/#Contact" device={Device.DESKTOP} />
@@ -33,7 +34,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
       >
         <span class="sr-only">Abrir Menú Principal</span>
         <svg
-          class="size-6"
+          class="size-12"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
@@ -51,18 +52,24 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
     <div class="flex flex-1 justify-end">
       <div class="relative flex flex-col items-end">
         <Image
-          class="mx-auto inline-block size-20 rounded-full md:size-18"
+          class="mx-auto inline-block h-auto rounded-full md:w-[100px]"
           src={LogoDecorazon}
           alt="Logo Decorazon"
-          width={75}
-          height={75}
         />
+        <div class="text-center hidden md:block">
+          <Image
+            class="inline-block w-[120px] h-auto rounded-full md:w-[150px]"
+            src={LogoDecorazon2}
+            alt="Logo Decorazon"
+          />
+          <hr class="mt-2 border-t-1 border-gray-300 w-300 mx-auto" />
+        </div>
       </div>
     </div>
   </nav>
 
   <dialog
-    class="bg-primary z-50 max-h-[80vh] w-full max-w-full translate-x-0 transition-discrete duration-300 lg:hidden starting:-translate-x-full [&:not([open])]:-translate-x-full"
+    class="bg-primary z-50 max-h-[80vh] w-full max-w-full translate-y-0 transition-discrete duration-300 lg:hidden starting:-translate-y-full [&:not([open])]:-translate-y-full"
     id="mobile-menu"
     role="dialog"
     aria-modal="true"
@@ -96,7 +103,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
       <div class="mt-6 space-y-2">
         <HeaderLink text="Info" href="/#info" device={Device.MOBILE} />
         <HeaderLink text="Galería" href="/Gallery" device={Device.MOBILE} />
-        <HeaderLink text="Servicios" href="/#Services" device={Device.MOBILE} />
+        <HeaderLink text="Servicios" href="/#services" device={Device.MOBILE} />
         <HeaderLink text="Contacto" href="/#Contact" device={Device.MOBILE} />
         <HeaderLink
           text="Solicitar Evento"
