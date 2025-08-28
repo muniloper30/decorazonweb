@@ -5,7 +5,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
 import LogoDecorazon2 from "../assets/dcorazon-black.png";
 ---
 
-<header class="top-0 z-60 w-screen flex justify-center items-center">
+<header class="bg-tertiary top-0 z-60 w-screen flex justify-center items-center">
   <nav
     class="flex md:flex-col-reverse flex-row-reverse items-center gap-7 px-4 py-4 uppercase"
   >
@@ -30,11 +30,11 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
       <button
         type="button"
         id="open-menu-button"
-        class="-m-2.5 inline-flex cursor-pointer items-center justify-center rounded-md p-2.5 text-black transition-all duration-300 will-change-transform hover:scale-150"
+        class="-m-2.5 inline-flex cursor-pointer  rounded-md p-2.5 text-black transition-all duration-300 will-change-transform hover:scale-150"
       >
         <span class="sr-only">Abrir Menú Principal</span>
         <svg
-          class="size-12"
+          class="md:size-12 size-8"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
@@ -52,17 +52,17 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
     <div class="flex flex-1 justify-end">
       <div class="relative flex flex-col items-end">
         <Image
-          class="mx-auto inline-block h-auto rounded-full md:w-[100px]"
+          class="hidden mx-auto md:inline-block h-auto rounded-full md:w-[100px]"
           src={LogoDecorazon}
           alt="Logo Decorazon"
         />
-        <div class="text-center hidden md:block">
+        <div class="flex flex-row text-center  md:block">
           <Image
-            class="inline-block w-[120px] h-auto rounded-full md:w-[150px]"
+            class="hidden md:inline-block w-[80px] h-auto rounded-full md:w-[150px]"
             src={LogoDecorazon2}
             alt="Logo Decorazon"
           />
-          <hr class="mt-2 border-t-1 border-gray-300 w-300 mx-auto" />
+          <hr class="hidden md:block md:mt-2 border-t-1 border-gray-100 w-3  md:w-300 mx-auto" />
         </div>
       </div>
     </div>
