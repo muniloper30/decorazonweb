@@ -6,7 +6,7 @@ import bgService from "../assets/bgHero.jpg";
 import papeleria from "../assets/servicios/papeleria.jpg";
 import detalles from "../assets/servicios/detalles.png";
 
-// Si quieres, lo dejamos data-driven:
+
 const servicios = [
   {
     img: montajes,
@@ -15,7 +15,6 @@ const servicios = [
     desc:
       "Creamos mesas decorativas a medida de diferentes tamaños. Cuidamos globos, dulces, temática y complementos para que sea el centro del evento.",
     tags: ["Montaje S", "Montaje M", "Montaje L", "Montaje XL", "Mesas infantiles"],
-    // Opcional: posición de recorte distinta por card
     objectPos: "object-center"
   },
   {
@@ -50,10 +49,9 @@ const servicios = [
 
 <section
   id="services"
-  class="relative py-24 sm:py-32"
+  class="relative py-4 sm:py-32"
   style={`background-image:url(${bgService.src}); background-size:cover; background-position:center;`}
 >
-  <!-- Overlay para mejorar contraste -->
   <div class="absolute inset-0 bg-white/70 backdrop-blur-[1px]"></div>
 
   <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -66,12 +64,12 @@ const servicios = [
       </p>
     </header>
 
-    <!-- Grid consistente -->
+    
     <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {servicios.map(({ img, alt, title, desc, tags, objectPos }) => (
         <article class="group h-full">
           <div class="flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm transition-shadow duration-300 hover:shadow-lg">
-            <!-- Imagen con aspecto fijo -->
+           
             <div class="aspect-[4/3] w-full overflow-hidden">
               <Image
                 src={img}
@@ -83,7 +81,7 @@ const servicios = [
               />
             </div>
 
-            <!-- Contenido -->
+           
             <div class="flex-1 p-6">
               <h3 class="text-lg font-semibold text-neutral-900">{title}</h3>
               <p class="mt-2 text-sm text-neutral-700 line-clamp-4">
@@ -91,8 +89,8 @@ const servicios = [
               </p>
             </div>
 
-            <!-- Footer / chips -->
-            <div class="mt-auto border-t border-neutral-100 p-4">
+           
+            <div class="mt-auto border-t border-neutral-300 p-4">
               <ul class="flex flex-wrap gap-2">
                 {tags.map((t) => (
                   <li class="select-none rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-black hover:text-white cursor-pointer">
@@ -104,6 +102,24 @@ const servicios = [
           </div>
         </article>
       ))}
+    </div>
+
+    <div class="text-center max-w-2xl mx-auto mt-12">
+      <h2 class="text-xl font-semibold tracking-tight text-neutral-900">
+        ¿No encuentras lo que buscas?
+      </h2>
+      <p class="mt-3 text-neutral-700">
+        Rellena este formulario y cuéntanos qué necesitas.
+      </p>
+      <br>
+      <button
+        class="bg-transparent text-black border border-black
+               hover:bg-black hover:text-white
+               transition-colors duration-500
+               py-2 px-4 cursor-pointer"
+      >
+        ¡Pincha aquí!
+      </button>
     </div>
   </div>
 </section>
