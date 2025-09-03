@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
 const { title = "De'corazón | Decoración y Organización de eventos " } = Astro.props;
 
 
@@ -16,6 +17,7 @@ const { title = "De'corazón | Decoración y Organización de eventos " } = Astr
 		<title>{title}</title>
 	</head>
 	<body class="w-screen overflow-x-hidden">
+		<ViewTransitions />
 		<Header />
 		<slot />
 	</body>
