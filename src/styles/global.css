@@ -4,6 +4,8 @@
   --color-primary: #de96a1;
   --color-secondary: #e8b3a3;
   --color-tertiary: #FAD3D4;
+  --color-pastel1: #FFFACD;
+  --color-pastel2: #CDCACC;
 
   --font-special: "Amertha", sans-serif;
 }
@@ -24,5 +26,5 @@ html {
 }
 
 .text-stroke {
-  -webkit-text-stroke: 0.1rem white;
+  -webkit-text-stroke: 0.1rem black;
 }

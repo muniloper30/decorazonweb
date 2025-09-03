@@ -1,186 +1,109 @@
 ---
-import Image from "astro/components/Image.astro";
-import bgPruebaServicio from "../assets/dcorazon_bg.png";
-import bgSectionServices from "../assets/background_02.jpg";
+import { Image } from "astro:assets";
+import celebraciones from "../assets/servicios/celebraciones.jpeg";
+import montajes from "../assets/servicios/montajeGlobo.jpeg";
+import bgService from "../assets/bgHero.jpg";
+import papeleria from "../assets/servicios/papeleria.jpg";
+import detalles from "../assets/servicios/detalles.png";
+
+// Si quieres, lo dejamos data-driven:
+const servicios = [
+  {
+    img: montajes,
+    alt: "Montajes de mesas",
+    title: "Montajes de mesas",
+    desc:
+      "Creamos mesas decorativas a medida de diferentes tamaños. Cuidamos globos, dulces, temática y complementos para que sea el centro del evento.",
+    tags: ["Montaje S", "Montaje M", "Montaje L", "Montaje XL", "Mesas infantiles"],
+    // Opcional: posición de recorte distinta por card
+    objectPos: "object-center"
+  },
+  {
+    img: celebraciones,
+    alt: "Decoración de celebraciones",
+    title: "Celebraciones",
+    desc:
+      "Diseñamos ambientes únicos y personalizados para que cada momento se convierta en un recuerdo inolvidable.",
+    tags: ["Revelaciones de sexo", "Babyshowers", "Cumpleaños", "Comuniones"],
+    objectPos: "object-center"
+  },
+  {
+    img: papeleria,
+    alt: "Papelería personalizada",
+    title: "Papelería",
+    desc:
+      "Botellas personalizadas, manteles, etiquetas, cartelería y decoración temática para aportar un toque exclusivo a tu celebración.",
+    tags: ["Pack S", "Pack M", "Pack L", "Pack XL"],
+    objectPos: "object-center"
+  },
+  {
+    img: detalles,
+    alt: "Detalles y regalos personalizados",
+    title: "Detalles y regalos",
+    desc:
+      "Detalles únicos para el Día de la Madre, del Padre, Navidad u otras fechas. Pequeños recuerdos que transmiten cariño.",
+    tags: ["Tazas", "Botellas", "Cajas regalo", "Vinilos"],
+    objectPos: "object-center"
+  }
+];
 ---
 
 <section
   id="services"
-  class="relative min-h-[30vh] sm:min-h-[100vh] flex items-center"
-  style={`background-image:url(${bgSectionServices.src}); background-size:cover; background-position:center;`}
+  class="relative py-24 sm:py-32"
+  style={`background-image:url(${bgService.src}); background-size:cover; background-position:center;`}
 >
-  <div class="mx-auto w-full max-w-7xl px-6">
-    <div class="flex flex-col items-center justify-center py-12">
-      <h2 class="text-2xl font-bold">Nuestros Servicios</h2>
-      <p class="mt-2 text-center">
-        Ofrecemos una variedad de servicios de decoración para todo tipo de
-        eventos.
+  <!-- Overlay para mejorar contraste -->
+  <div class="absolute inset-0 bg-white/70 backdrop-blur-[1px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <header class="text-center max-w-2xl mx-auto">
+      <h2 class="text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
+        Explora nuestros servicios
+      </h2>
+      <p class="mt-3 text-neutral-700">
+        Decoramos con mimo cada detalle para crear momentos inolvidables.
       </p>
-    </div>
+    </header>
 
-    <!-- Servicios ofrecidos por DeCorazon -->
-    <div class="md:flex md:items-center md:flex-row md:justify-center flex flex-col pb-2.5 gap-10 ">
-        
-      <div
-        class="max-w-sm rounded-2xl  bg-rose-300 backdrop-blur-sm shadow-sm"
-      >
-        <Image class="rounded-t-lg" src={bgPruebaServicio} alt="" />
+    <!-- Grid consistente -->
+    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {servicios.map(({ img, alt, title, desc, tags, objectPos }) => (
+        <article class="group h-full">
+          <div class="flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm transition-shadow duration-300 hover:shadow-lg">
+            <!-- Imagen con aspecto fijo -->
+            <div class="aspect-[4/3] w-full overflow-hidden">
+              <Image
+                src={img}
+                alt={alt}
+                class={`h-full w-full object-cover ${objectPos ?? ""} transition-transform duration-700 ease-out group-hover:scale-105`}
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
 
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              Revelaciones de sexo
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-800">
-            Revelamos de forma creativa y emotiva si será niño o niña, con
-            decoración temática y un ambiente especial para compartir con
-            familiares y amigos
-          </p>
-          <a
-            href="/form"
-            class="mt-6 inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold shadow bg-rose-300 hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
-            aria-label="Ir al formulario de servicios"
-          >
-            Solicitar un evento
-            <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
+            <!-- Contenido -->
+            <div class="flex-1 p-6">
+              <h3 class="text-lg font-semibold text-neutral-900">{title}</h3>
+              <p class="mt-2 text-sm text-neutral-700 line-clamp-4">
+                {desc}
+              </p>
+            </div>
 
-      <div
-        class="max-w-sm rounded-2xl  bg-rose-300 backdrop-blur-sm shadow-sm"
-      >
-        <Image class="rounded-t-lg" src={bgPruebaServicio} alt="" />
-
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              Revelaciones de sexo
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-800">
-            Revelamos de forma creativa y emotiva si será niño o niña, con
-            decoración temática y un ambiente especial para compartir con
-            familiares y amigos
-          </p>
-          <a
-            href="/form"
-            class="mt-6 inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold shadow bg-rose-300 hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
-            aria-label="Ir al formulario de servicios"
-          >
-            Solicitar un evento
-            <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div
-        class="max-w-sm rounded-2xl  bg-rose-300 backdrop-blur-sm shadow-sm"
-      >
-        <Image class="rounded-t-lg" src={bgPruebaServicio} alt="" />
-
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              Revelaciones de sexo
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-800">
-            Revelamos de forma creativa y emotiva si será niño o niña, con
-            decoración temática y un ambiente especial para compartir con
-            familiares y amigos
-          </p>
-          <a
-            href="/form"
-            class="mt-6 inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold shadow bg-rose-300 hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
-            aria-label="Ir al formulario de servicios"
-          >
-            Solicitar un evento
-            <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-
-      <div
-        class="max-w-sm rounded-2xl  bg-rose-300 backdrop-blur-sm shadow-sm"
-      >
-        <Image class="rounded-t-lg" src={bgPruebaServicio} alt="" />
-
-        <div class="p-5">
-          <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              Revelaciones de sexo
-            </h5>
-          </a>
-          <p class="mb-3 font-normal text-gray-800">
-            Revelamos de forma creativa y emotiva si será niño o niña, con
-            decoración temática y un ambiente especial para compartir con
-            familiares y amigos
-          </p>
-          <a
-            href="/form"
-            class="mt-6 inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold shadow bg-rose-300 hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
-            aria-label="Ir al formulario de servicios"
-          >
-            Solicitar un evento
-            <svg
-              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
+            <!-- Footer / chips -->
+            <div class="mt-auto border-t border-neutral-100 p-4">
+              <ul class="flex flex-wrap gap-2">
+                {tags.map((t) => (
+                  <li class="select-none rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-black hover:text-white cursor-pointer">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
