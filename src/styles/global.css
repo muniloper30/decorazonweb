@@ -28,3 +28,7 @@ html {
 .text-stroke {
   -webkit-text-stroke: 0.1rem black;
 }
+
+
+
+dialog::backdrop { background: rgba(0,0,0,.35); }

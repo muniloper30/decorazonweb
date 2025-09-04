@@ -1,4 +1,5 @@
 ---
+import { servicios } from "@/consts/servicios";
 import { Image } from "astro:assets";
 import celebraciones from "../assets/servicios/celebraciones.jpeg";
 import montajes from "../assets/servicios/montajeGlobo.jpeg";
@@ -7,44 +8,7 @@ import papeleria from "../assets/servicios/papeleria.jpg";
 import detalles from "../assets/servicios/detalles.png";
 
 
-const servicios = [
-  {
-    img: montajes,
-    alt: "Montajes de mesas",
-    title: "Montajes de mesas",
-    desc:
-      "Creamos mesas decorativas a medida de diferentes tamaños. Cuidamos globos, dulces, temática y complementos para que sea el centro del evento.",
-    tags: ["Montaje S", "Montaje M", "Montaje L", "Montaje XL", "Mesas infantiles"],
-    objectPos: "object-center"
-  },
-  {
-    img: celebraciones,
-    alt: "Decoración de celebraciones",
-    title: "Celebraciones",
-    desc:
-      "Diseñamos ambientes únicos y personalizados para que cada momento se convierta en un recuerdo inolvidable.",
-    tags: ["Revelaciones de sexo", "Babyshowers", "Cumpleaños", "Comuniones"],
-    objectPos: "object-center"
-  },
-  {
-    img: papeleria,
-    alt: "Papelería personalizada",
-    title: "Papelería",
-    desc:
-      "Botellas personalizadas, manteles, etiquetas, cartelería y decoración temática para aportar un toque exclusivo a tu celebración.",
-    tags: ["Pack S", "Pack M", "Pack L", "Pack XL"],
-    objectPos: "object-center"
-  },
-  {
-    img: detalles,
-    alt: "Detalles y regalos personalizados",
-    title: "Detalles y regalos",
-    desc:
-      "Detalles únicos para el Día de la Madre, del Padre, Navidad u otras fechas. Pequeños recuerdos que transmiten cariño.",
-    tags: ["Tazas", "Botellas", "Cajas regalo", "Vinilos"],
-    objectPos: "object-center"
-  }
-];
+
 ---
 
 <section
@@ -66,13 +30,13 @@ const servicios = [
 
     
     <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {servicios.map(({ img, alt, title, desc, tags, objectPos }) => (
+      {servicios.map(({ image, alt, title, desc, tags, objectPos }) => (
         <article class="group h-full">
           <div class="flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm transition-shadow duration-300 hover:shadow-lg">
            
             <div class="aspect-[4/3] w-full overflow-hidden">
               <Image
-                src={img}
+                src={image}
                 alt={alt}
                 class={`h-full w-full object-cover ${objectPos ?? ""} transition-transform duration-700 ease-out group-hover:scale-105`}
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"

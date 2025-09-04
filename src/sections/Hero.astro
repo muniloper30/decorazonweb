@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import LogoDecorazon from "../assets/logoDcorazon.png";
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-[1fr_15fr] gap-0">
+<section id="Inicio" class="grid grid-cols-1 md:grid-cols-[1fr_15fr] gap-0">
 <aside class="flex flex-col md:flex-col items-center gap-3 pt-6 md:pt-14">
   <!-- Texto -->
   <p class="text-xs md:transform md:rotate-270 md:text-sm md:mt-5">
@@ -98,14 +98,15 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
     <div
       class="w-full max-w-[900px] flex justify-center md:justify-end mt-4 px-4"
     >
-      <button
+      <a
+        href="/Form"
         class="bg-transparent text-black border border-black
                hover:bg-black hover:text-white
                transition-colors duration-500
                py-2 px-4 cursor-pointer"
       >
         ¡Solicita presupuesto!
-      </button>
+      </a>
     </div>
   </div>
 </section>

@@ -1,17 +1,264 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { galleryImages } from "@/consts/galleryImages";
 ---
 
-
 <Layout>
-    <section class="gallery">
-        <h1 class="text-center text-3xl font-bold mb-8">Galería</h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <!-- Aquí puedes agregar imágenes de la galería -->
-            <img src="/images/gallery1.jpg" alt="Imagen 1" class="w-full h-auto object-cover">
-            <img src="/images/gallery2.jpg" alt="Imagen 2" class="w-full h-auto object-cover">
-            <img src="/images/gallery3.jpg" alt="Imagen 3" class="w-full h-auto object-cover">
-            <!-- Agrega más imágenes según sea necesario -->
-        </div>
-    </section>
+  <!-- Custom Style -->
+
+  <section class="bg-tertiary relative py-16 md:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl" id="gallery">
+      <div class="relative mb-12 flex items-center justify-center">
+         <h2
+          class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
+        >
+            Galería De'Corazón
+        </h2>
+      </div>
+      <h3
+        class="block pb-20 text-center text-lg font-bold text-neutral-800/80 opacity-80 max-md:px-6 max-md:pb-5"
+      >
+        Echa un vistazo a algunos de nuestros trabajos recientes y déjate inspirar para tu próximo evento.
+      </h3>
+
+      <ul
+        id="slider-mobile"
+        class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryImages.map(({ image, alt, thumb }, index) => (
+            <li
+              class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              id={thumb + "slider"}
+              data-index={index}
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "slider"}
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul
+        class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryImages.map(({ image, alt, thumb }, index) => (
+            <li
+              id={thumb}
+              class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              data-index={index}
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb}
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div
+      class="pointer-events-none fixed inset-0 flex cursor-pointer items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightbox-title"
+      id="lightbox"
+    >
+      <h2 id="lightbox-title" class="sr-only">Galería de imágenes DeCorazon</h2>
+      <div class="relative w-full max-w-5xl p-4">
+        <button
+          type="button"
+          id="close-lightbox"
+          class="hover:text-primary absolute top-1 -right-16 z-[999999] cursor-pointer rounded-full bg-white p-2.5 text-gray-700 transition-all duration-300 ease-in will-change-transform hover:scale-125 sm:top-6 sm:right-6 md:top-8 md:right-8"
+        >
+          <span class="sr-only">Cerrar Galería</span>
+          <svg
+            class="size-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+            data-slot="icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <button
+          id="prev-image"
+          class="hover:text-primary absolute -bottom-16 left-8 z-50 flex h-12 w-12 transform cursor-pointer items-center justify-center rounded-full bg-white p-2.5 text-2xl text-gray-700 transition-all duration-300 ease-in-out hover:scale-125 md:top-1/2 md:-translate-y-1/2 lg:-left-16"
+        >
+          &#60;
+        </button>
+
+        <button
+          id="next-image"
+          class="hover:text-primary absolute right-8 -bottom-16 z-50 flex h-12 w-12 transform cursor-pointer items-center justify-center rounded-full bg-white p-2.5 text-2xl text-gray-700 transition-all duration-300 ease-in-out hover:scale-125 md:top-1/2 md:-translate-y-1/2 lg:-right-16"
+        >
+          &#62;
+        </button>
+
+        <figure id="light-box-content"></figure>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  // 1) Función que (re)monta la galería dentro de #gallery
+  function bindGallery() {
+    const root = document.getElementById("gallery");
+    if (!root) return;
+
+    // Recojo de nuevo TODOS los elementos dentro del scope
+    const galleryItems = Array.from(root.querySelectorAll("li img"));
+    const lightBox = document.getElementById("lightbox");
+    const lightBoxImgContainer = document.getElementById("light-box-content");
+    const btnCloseLightBox = document.getElementById("close-lightbox");
+    const btnPrev = document.getElementById("prev-image");
+    const btnNext = document.getElementById("next-image");
+    const slider = document.getElementById("slider-mobile");
+
+    let currentIndex = 0;
+
+    const openLightBox = (index) => {
+      if (index < 0 || index >= galleryItems.length) return;
+      currentIndex = index;
+      const image = galleryItems[index];
+
+      const previousImage = lightBoxImgContainer.querySelector("img");
+      if (previousImage) {
+        const galleryParentID = previousImage.getAttribute("data-thumbID");
+        const galleryParent = document.getElementById(galleryParentID);
+        if (galleryParent) galleryParent.appendChild(previousImage);
+      }
+
+      galleryItems.forEach((img) => (img.style.viewTransitionName = "none"));
+      image.style.viewTransitionName = "selected-img";
+
+      lightBoxImgContainer.appendChild(image);
+      lightBox.classList.remove("opacity-0", "pointer-events-none");
+      lightBox.classList.add("bg-[#de96a1]","z-[9999]","opacity-100","pointer-events-auto","backdrop-blur-[10px]");
+      document.body.style.overflow = "hidden";
+      updateNavigationButtons();
+    };
+
+    const closeLightBox = (image) => {
+      lightBox.classList.add("opacity-0", "pointer-events-none");
+      lightBox.classList.remove("bg-[#de96a1]","z-[9999]","opacity-100","pointer-events-auto","backdrop-blur-[10px]");
+      const galleryParentID = image.getAttribute("data-thumbID");
+      const galleryParent = document.getElementById(galleryParentID);
+      if (galleryParent) galleryParent.appendChild(image);
+      document.body.style.overflow = "";
+    };
+
+    const navigateLightBox = (direction) => {
+      const newIndex = currentIndex + direction;
+      if (newIndex < 0 || newIndex >= galleryItems.length) return;
+      if (!document.startViewTransition) { openLightBox(newIndex); return; }
+      document.startViewTransition(() => openLightBox(newIndex));
+    };
+
+    const updateNavigationButtons = () => {
+      if (!btnPrev || !btnNext) return;
+      btnPrev.style.display = currentIndex > 0 ? "flex" : "none";
+      btnNext.style.display = currentIndex < galleryItems.length - 1 ? "flex" : "none";
+    };
+
+    // Listeners por tarjeta
+    galleryItems.forEach((image, index) => {
+      image.addEventListener("click", () => {
+        if (!document.startViewTransition) { openLightBox(index); return; }
+        galleryItems.forEach((img) => (img.style.viewTransitionName = ""));
+        image.style.viewTransitionName = "selected-img";
+        document.startViewTransition(() => openLightBox(index));
+      });
+    });
+
+    // Cerrar
+    const handleClose = async () => {
+      const image = lightBoxImgContainer.querySelector("img");
+      if (!image) return;
+      if (!document.startViewTransition) { closeLightBox(image); return; }
+      const animation = document.startViewTransition(() => closeLightBox(image));
+      await animation.finished;
+      image.style.viewTransitionName = "none";
+    };
+
+    lightBox.addEventListener("click", handleClose);
+    btnCloseLightBox?.addEventListener("click", (e) => { e.stopPropagation(); handleClose(); });
+    btnPrev?.addEventListener("click", (e) => { e.stopPropagation(); navigateLightBox(-1); });
+    btnNext?.addEventListener("click", (e) => { e.stopPropagation(); navigateLightBox(1); });
+
+    document.addEventListener("keydown", async (event) => {
+      const isLightboxOpen = !lightBox.classList.contains("opacity-0");
+      if (event.key === "Escape") await handleClose();
+      else if ((event.key === "ArrowRight" || event.key === "d") && isLightboxOpen) { event.preventDefault(); navigateLightBox(1); }
+      else if ((event.key === "ArrowLeft" || event.key === "a") && isLightboxOpen) { event.preventDefault(); navigateLightBox(-1); }
+    });
+
+    // Slider mobile (protegido si no existe)
+    if (slider) {
+      const sliderItems = Array.from(slider.children);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          (entry.target).style.transform = entry.isIntersecting ? "scale(1)" : "scale(0.8)";
+        });
+      }, { root: slider, threshold: 0.9 });
+
+      sliderItems.forEach((item) => observer.observe(item));
+    }
+  }
+
+  // 2) Primera carga + re-enganche tras navegación parcial de Astro
+  document.addEventListener("DOMContentLoaded", bindGallery);
+  document.addEventListener("astro:page-load", bindGallery);   // recomendado por Astro
+  document.addEventListener("astro:after-swap", bindGallery);   // tras transiciones
+</script>
+
+
+<style>
+  
+  .title {
+    position: absolute;
+    color: #de96a1;
+    animation: heartBeat 3s ease-in-out infinite;
+  }
+ @keyframes heartBeat {
+  0%,
+  100% {
+    
+    transform: scale(1);
+  }
+  50% {
+   
+    transform: scale(1.08);
+  }
+}
+
+  #slider-mobile {
+    scrollbar-width: none;
+  }
+
+  #slider-mobile::-webkit-scrollbar {
+    display: none;
+  }
+</style>

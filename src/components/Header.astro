@@ -5,15 +5,24 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
 import LogoDecorazon2 from "../assets/dcorazon-black.png";
 ---
 
-<header class="bg-tertiary top-0 z-60 w-screen flex justify-center items-center">
-   <nav class="flex md:flex-col-reverse flex-row-reverse items-center gap-7 px-4 py-4 uppercase w-full max-w-7xl">
+<header
+  id="header"
+  class="bg-tertiary top-0 z-60 w-screen flex justify-center items-center"
+>
+  <nav
+    class="flex md:flex-col-reverse flex-row-reverse items-center gap-7 px-4 py-4 uppercase w-full max-w-7xl"
+  >
     <!-- Links desktop -->
     <div class="hidden lg:flex lg:gap-x-12">
-      <HeaderLink text="Info" href="/#info" device={Device.DESKTOP} />
+      <HeaderLink text="Inicio" href="/#inicio" device={Device.DESKTOP} />
       <HeaderLink text="Galería" href="/Gallery" device={Device.DESKTOP} />
       <HeaderLink text="Servicios" href="/#services" device={Device.DESKTOP} />
       <HeaderLink text="Contacto" href="/#Contact" device={Device.DESKTOP} />
-      <HeaderLink text="Solicitar Presupuesto" href="/Form" device={Device.DESKTOP} />
+      <HeaderLink
+        text="Solicitar Presupuesto"
+        href="/Form"
+        device={Device.DESKTOP}
+      />
     </div>
 
     <!-- Botón hamburguesa -->
@@ -26,8 +35,17 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
         aria-controls="mobile-menu"
       >
         <span class="sr-only">Abrir Menú Principal</span>
-        <svg class="md:size-12 size-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        <svg
+          class="md:size-12 size-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
         </svg>
       </button>
     </div>
@@ -35,10 +53,20 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
     <!-- Logos -->
     <div class="flex flex-1 justify-end">
       <div class="relative flex flex-col items-end">
-        <Image class="hidden mx-auto md:inline-block h-auto rounded-full md:w-[100px]" src={LogoDecorazon} alt="Logo Decorazon" />
+        <Image
+          class="hidden mx-auto md:inline-block h-auto rounded-full md:w-[100px]"
+          src={LogoDecorazon}
+          alt="Logo Decorazon"
+        />
         <div class="flex flex-row text-center md:block">
-          <Image class="hidden md:inline-block w-[80px] h-auto rounded-full md:w-[150px]" src={LogoDecorazon2} alt="Logo Decorazon" />
-          <hr class="hidden md:block md:mt-2 border-t-1 border-gray-100 w-3 md:w-300 mx-auto" />
+          <Image
+            class="hidden md:inline-block w-[80px] h-auto rounded-full md:w-[150px]"
+            src={LogoDecorazon2}
+            alt="Logo Decorazon"
+          />
+          <hr
+            class="hidden md:block md:mt-2 border-t-1 border-gray-100 w-3 md:w-300 mx-auto"
+          />
         </div>
       </div>
     </div>
@@ -61,19 +89,32 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
             class="-m-2.5 cursor-pointer p-2.5 text-black transition-all duration-300 ease-in will-change-transform hover:scale-150"
           >
             <span class="sr-only">Cerrar Menú</span>
-            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+            <svg
+              class="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"></path>
             </svg>
           </button>
         </div>
       </div>
 
       <div class="mt-6 space-y-2">
-        <HeaderLink text="Info" href="/#info" device={Device.MOBILE} />
+        <HeaderLink text="Inicio" href="/#Inicio" device={Device.MOBILE} />
         <HeaderLink text="Galería" href="/Gallery" device={Device.MOBILE} />
         <HeaderLink text="Servicios" href="/#services" device={Device.MOBILE} />
         <HeaderLink text="Contacto" href="/#Contact" device={Device.MOBILE} />
-        <HeaderLink text="Solicitar Presupuesto" href="/Form" device={Device.MOBILE} />
+        <HeaderLink
+          text="Solicitar Presupuesto"
+          href="/Form"
+          device={Device.MOBILE}
+        />
       </div>
     </div>
   </dialog>
@@ -81,47 +122,53 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
 
 <!-- Empuja el contenido por debajo del header fijo -->
 <style is:global>
-  main { padding-top: 4rem; } /* ajusta según altura real del header */
+  main {
+    padding-top: 4rem;
+  }
 </style>
 
 <script is:global>
   function bindMenu() {
-    const dialog = document.querySelector('[data-menu]');
-    const btnOpen = document.querySelector('[data-menu-toggle]');
-    const btnClose = document.querySelector('[data-menu-close]');
+    const dialog = document.querySelector("[data-menu]");
+    const btnOpen = document.querySelector("[data-menu-toggle]");
+    const btnClose = document.querySelector("[data-menu-close]");
 
     if (!dialog || !btnOpen) return;
 
     const open = () => {
       if (dialog.open) return;
-      if (typeof dialog.showModal === 'function') {
+      if (typeof dialog.showModal === "function") {
         dialog.showModal();
       } else {
-        dialog.setAttribute('open','');
+        dialog.setAttribute("open", "");
       }
-      btnOpen.setAttribute('aria-expanded','true');
-      document.body.classList.add('overflow-hidden');
+      btnOpen.setAttribute("aria-expanded", "true");
+      document.body.classList.add("overflow-hidden");
     };
 
     const close = () => {
       if (!dialog.open) return;
-      dialog.close ? dialog.close() : dialog.removeAttribute('open');
-      btnOpen.setAttribute('aria-expanded','false');
-      document.body.classList.remove('overflow-hidden');
+      dialog.close ? dialog.close() : dialog.removeAttribute("open");
+      btnOpen.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("overflow-hidden");
     };
 
     btnOpen.onclick = () => (dialog.open ? close() : open());
     btnClose && (btnClose.onclick = close);
 
     // Cerrar al pulsar un enlace del menú
-    dialog.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    dialog
+      .querySelectorAll("a")
+      .forEach((a) => a.addEventListener("click", close));
 
     // Cerrar con ESC
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
   }
 
   // Primera carga
-  document.addEventListener('DOMContentLoaded', bindMenu);
+  document.addEventListener("DOMContentLoaded", bindMenu);
   // Re-enganchar tras las transiciones de Astro
-  document.addEventListener('astro:after-swap', bindMenu);
+  document.addEventListener("astro:after-swap", bindMenu);
 </script>
