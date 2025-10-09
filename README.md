@@ -29,7 +29,7 @@ Su filosofía se centra en crear momentos memorables con diseños únicos y un t
 
 ## Tecnologías utilizadas
 
-- HTML5, CSS3, JavaScript
+- HTML5, CSS3, JavaScript, Typescript
 - Astro.js
 - Tailwind CSS
 
