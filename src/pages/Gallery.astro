@@ -2,15 +2,21 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { galleryImages } from "@/consts/galleryImages";
+import LogoDecorazon from "../assets/logoDcorazon.png";
 ---
 
 <Layout>
-  <!-- Custom Style -->
+  
 
-  <section class="bg-tertiary relative py-16 md:px-6 lg:px-8">
+  <section class="bg-tertiary relative py-30 md:px-6 lg:px-8">
     <div class="mx-auto max-w-6xl" id="gallery">
       <div class="relative mb-12 flex items-center justify-center">
-         <h2
+        <Image
+          class="md:hidden mx-auto inline-block h-auto rounded-full w-[200px] relative bottom-20"
+          src={LogoDecorazon}
+          alt="Logo Decorazon"
+        />
+        <h2
           class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
         >
             Galería De'Corazón
