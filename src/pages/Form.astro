@@ -8,8 +8,14 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
         Solicitud de Evento
       </h2>
-
-      <form class="bg-white rounded-2xl shadow-xl p-8 space-y-10">
+      <h3
+        class="block pb-20 text-center text-lg font-bold text-neutral-800/80 opacity-80 max-md:px-6 max-md:pb-5"
+      >
+        Cuéntanos tu idea
+Queremos conocer todos los detalles de tu evento.
+Cuéntanos qué estás planeando, a quién va dedicado, cómo te gustaría que fuera la decoración o la temática… ¡Nos encantará darle forma contigo.
+      </h3>
+      <form class="bg-white rounded-2xl shadow-xl p-8 space-y-10" id="form">
         <!-- Sección: Datos personales -->
         <div>
           <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">
@@ -17,25 +23,34 @@ import Layout from "../layouts/Layout.astro";
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium text-gray-700">Tu nombre</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Tu nombre</label
+              >
               <input
                 type="text"
+                name="name"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
                 required
               />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Teléfono</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Teléfono</label
+              >
               <input
                 type="tel"
+                name="from_number"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
                 required
               />
             </div>
             <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-gray-700">Email</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Email</label
+              >
               <input
                 type="email"
+                name="email_id"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
                 required
               />
@@ -50,24 +65,33 @@ import Layout from "../layouts/Layout.astro";
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium text-gray-700">Día del evento</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Día del evento</label
+              >
               <input
                 type="date"
+                name="event_date"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
                 required
               />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Lugar del evento</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Lugar del evento</label
+              >
               <input
                 type="text"
+                name="event_location"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
                 required
               />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Montaje</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Montaje</label
+              >
               <select
+                name="setup_size"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
               >
                 <option>S</option>
@@ -78,43 +102,60 @@ import Layout from "../layouts/Layout.astro";
               </select>
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Tipo de evento</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Tipo de evento</label
+              >
               <select
+                name="event_type"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
               >
                 <option>Cumpleaños</option>
                 <option>Baby shower</option>
                 <option>Comunión</option>
                 <option>Bautizo</option>
+                <option>Evento Corporativo</option>
                 <option>Otro</option>
               </select>
             </div>
             <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-gray-700">Temática</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Temática</label
+              >
               <input
                 type="text"
+                name="event_theme"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
               />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Nombre del niñ@</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >¿A quién va dedicado el evento?</label
+              >
               <input
                 type="text"
+                name="child_name"
                 class="bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
               />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700">Edad</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Años que se celebran</label
+              >
               <input
                 type="number"
+                name="child_age"
                 class="bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
               />
             </div>
             <div class="md:col-span-2">
-              <label class="block text-sm font-medium text-gray-700">Extras / Papelería</label>
+              <label class="block text-sm font-medium text-gray-700"
+                >Extras / Papelería</label
+              >
               <textarea
                 rows="3"
+                name="extras_details"
                 class="mt-2 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
+                placeholder="Botellas personalizadas, manteles, etiquetas, cartelería..."
               ></textarea>
             </div>
           </div>
@@ -127,8 +168,9 @@ import Layout from "../layouts/Layout.astro";
           </h3>
           <textarea
             rows="5"
+            name="message"
             class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-rose-500 hover:border-rose-300 shadow-sm focus:shadow"
-            placeholder="Cuéntanos detalles importantes (horario de acceso, parking, restricciones, etc.)"
+            placeholder="Cuéntanos detalles importantes (horario de acceso, restricciones, etc.)"
           ></textarea>
         </div>
 
@@ -136,12 +178,110 @@ import Layout from "../layouts/Layout.astro";
         <div>
           <button
             type="submit"
-            class="w-full rounded-xl bg-primary px-6 py-4 text-white font-semibold text-lg shadow-md hover:bg-primary/80 transition-colors"
+            id="button"
+            value="Send Email"
+            class="w-full rounded-xl bg-primary px-6 py-4 text-white font-semibold text-lg shadow-md hover:bg-rose-400 transition-colors cursor-pointer"
           >
             Enviar solicitud
           </button>
         </div>
       </form>
+
+      <!-- Notificación de éxito -->
+      <div
+        id="toast-success"
+        class="hidden fixed bottom-6 right-6 max-w-sm w-full bg-emerald-900 text-emerald-200 rounded-lg shadow-lg p-4 border border-emerald-700 animate-fade-in"
+      >
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <!-- Icono de check -->
+            <svg
+              class="h-6 w-6 text-emerald-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div class="ml-3 flex-1">
+            <p class="font-semibold">¡Formulario enviado!</p>
+            <p class="text-sm text-emerald-300">
+              Hemos recibido tu solicitud correctamente. Te contactaremos
+              pronto.
+            </p>
+            <div class="mt-2 flex gap-4 text-sm">
+              <button id="dismiss-toast" class="font-semibold hover:underline">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out;
+    }
+  </style>
 </Layout>
+
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+
+<script type="text/javascript">
+  emailjs.init("612p8l6--jl1x8Irv");
+</script>
+
+<script>
+  const btn = document.getElementById("button");
+  const toast = document.getElementById("toast-success");
+  const dismissBtn = document.getElementById("dismiss-toast");
+
+  document.getElementById("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    btn.value = "Enviando...";
+
+    const serviceID = "default_service";
+    const templateID = "template_ap3arcv";
+
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btn.value = "Enviar formulario";
+
+        // Mostrar toast
+        toast.classList.remove("hidden");
+
+        // Ocultar automáticamente después de 5s
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 7000);
+      },
+      (err) => {
+        btn.value = "Enviar formulario";
+        alert("Error al enviar: " + JSON.stringify(err));
+      }
+    );
+  });
+
+  // Botón para cerrar el toast manualmente
+  dismissBtn.addEventListener("click", () => toast.classList.add("hidden"));
+</script>
