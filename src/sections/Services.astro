@@ -30,41 +30,43 @@ import detalles from "../assets/servicios/detalles.png";
 
     
     <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {servicios.map(({ image, alt, title, desc, tags, objectPos }) => (
-        <article class="group h-full">
-          <div class="flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm transition-shadow duration-300 hover:shadow-lg">
-           
-            <div class="aspect-[4/3] w-full overflow-hidden">
-              <Image
-                src={image}
-                alt={alt}
-                class={`h-full w-full object-cover ${objectPos ?? ""} transition-transform duration-700 ease-out group-hover:scale-105`}
-                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+      {servicios.map(({ image, alt, title, desc, tags, objectPos, url }) => (
+        <a href={url}>
+          <article class="group h-full">
+            <div class="flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/5 shadow-sm transition-shadow duration-300 hover:shadow-lg">
+            
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src={image}
+                  alt={alt}
+                  class={`h-full w-full object-cover ${objectPos ?? ""} transition-transform duration-700 ease-out group-hover:scale-105`}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
 
-           
-            <div class="flex-1 p-6">
-              <h3 class="text-lg font-semibold text-neutral-900">{title}</h3>
-              <p class="mt-2 text-sm text-neutral-700 line-clamp-4">
-                {desc}
-              </p>
-            </div>
+            
+              <div class="flex-1 p-6">
+                <h3 class="text-lg font-semibold text-neutral-900">{title}</h3>
+                <p class="mt-2 text-sm text-neutral-700 line-clamp-4">
+                  {desc}
+                </p>
+              </div>
 
-           
-            <div class="mt-auto border-t border-neutral-300 p-4">
-              <ul class="flex flex-wrap gap-2">
-                {tags.map((t) => (
-                  <li class="select-none rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-black hover:text-white cursor-pointer">
-                    {t}
-                  </li>
-                ))}
-              </ul>
+            
+              <div class="mt-auto border-t border-neutral-300 p-4">
+                <ul class="flex flex-wrap gap-2">
+                  {tags.map((t) => (
+                    <li class="select-none rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-black hover:text-white cursor-pointer">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </a>
       ))}
     </div>
 
