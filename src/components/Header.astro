@@ -13,16 +13,27 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
     class="flex md:flex-col-reverse flex-row-reverse items-center gap-7 px-4 py-4 uppercase w-full max-w-7xl"
   >
     <!-- Links desktop -->
-    <div class="hidden lg:flex lg:gap-x-12">
+    <div class="hidden lg:flex lg:gap-x-12 relative">
       <HeaderLink text="Inicio" href="/#inicio" device={Device.DESKTOP} />
       <HeaderLink text="Galería" href="/Gallery" device={Device.DESKTOP} />
-      <HeaderLink text="Servicios" href="/#services" device={Device.DESKTOP} />
+
+      <!-- Dropdown solo visible en desktop -->
+      <div class="relative group">
+        <HeaderLink text="Servicios" href="/#services" device={Device.DESKTOP} />
+
+        <!-- Submenú -->
+        <div
+          class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50"
+        >
+          <a href="/MontajeMesas" class="block px-4 py-2 text-sm hover:bg-primary">Montajes de mesas</a>
+          <a href="/Celebraciones" class="block px-4 py-2 text-sm hover:bg-primary">Celebraciones</a>
+          <a href="/Papeleria" class="block px-4 py-2 text-sm hover:bg-primary">Papelería</a>
+          <a href="/DetallesRegalos" class="block px-4 py-2 text-sm hover:bg-primary">Detalles y regalos</a>
+        </div>
+      </div>
+
       <HeaderLink text="Contacto" href="/#Contact" device={Device.DESKTOP} />
-      <HeaderLink
-        text="Solicitar Presupuesto"
-        href="/Form"
-        device={Device.DESKTOP}
-      />
+      <HeaderLink text="Solicitar Presupuesto" href="/Form" device={Device.DESKTOP} />
     </div>
 
     <!-- Botón hamburguesa -->
@@ -110,15 +121,12 @@ import LogoDecorazon2 from "../assets/dcorazon-black.png";
         <HeaderLink text="Galería" href="/Gallery" device={Device.MOBILE} />
         <HeaderLink text="Servicios" href="/#services" device={Device.MOBILE} />
         <HeaderLink text="Contacto" href="/#Contact" device={Device.MOBILE} />
-        <HeaderLink
-          text="Solicitar Presupuesto"
-          href="/Form"
-          device={Device.MOBILE}
-        />
+        <HeaderLink text="Solicitar Presupuesto" href="/Form" device={Device.MOBILE} />
       </div>
     </div>
   </dialog>
 </header>
+
 
 <!-- Empuja el contenido por debajo del header fijo -->
 <style is:global>
