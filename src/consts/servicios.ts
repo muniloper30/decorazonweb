@@ -12,7 +12,7 @@ export const servicios = [
     title: "Montajes de mesas",
     url: "/MontajeMesas",
     desc:
-      "Creamos mesas decorativas a medida de diferentes tamaños. Cuidamos globos, dulces, temática y complementos para que sea el centro del evento.",
+      "Creamos mesas decorativas a medida de diferentes tamaños. Cuidamos cada detalle para lograr una decoración perfecta.",
     tags: ["Montaje S", "Montaje M", "Montaje L", "Montaje XL", "Mesas infantiles"],
     objectPos: "object-center",
   },
@@ -33,7 +33,7 @@ export const servicios = [
     url: "/Papeleria",
     desc:
       "Botellas personalizadas, manteles, etiquetas, cartelería y decoración temática para aportar un toque exclusivo a tu celebración.",
-    tags: ["Pack S", "Pack M", "Pack L", "Pack XL"],
+    tags: ["Botellas", "Manteles", "Recordatorios", "Chocolatinas"],
     objectPos: "object-center",
   },
   {
