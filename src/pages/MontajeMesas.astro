@@ -29,7 +29,8 @@ import bgService from "../assets/bgHero.jpg";
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Primera fila: Montajes S, M, L -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
         <!-- Montaje S -->
         <div
           class="bg-white rounded-2xl shadow-lg overflow-hidden
@@ -107,59 +108,64 @@ import bgService from "../assets/bgHero.jpg";
             </p>
           </div>
         </div>
+      </div>
 
-        <!-- Montaje XL -->
-        <div
-          class="bg-white rounded-2xl shadow-lg overflow-hidden
-            transition duration-700 ease-out transform
-            hover:scale-150 hover:shadow-2xl -start-2"
-        >
-          <div class="aspect-w-16 aspect-h-12">
-            <img
-              src="/src/assets/servicios/montajeXL.jpeg"
-              alt="Montaje Extra Grande (XL)"
-              class="object-cover w-full h-full"
-            />
+      <!-- Segunda fila: Montajes XL y con Globos centrados -->
+      <div class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+          <!-- Montaje XL -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden
+              transition duration-700 ease-out transform
+              hover:scale-150 hover:shadow-2xl"
+          >
+            <div class="aspect-w-12 aspect-h-10">
+              <img
+                src="/src/assets/servicios/montajeXL.jpeg"
+                alt="Montaje Extra Grande (XL)"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">Montaje XL</h3>
+              <p class="text-gray-600 mb-4">
+                El Montaje XL es un set de decoración de 5 a 6 metros que incluye
+                paneles, globos, suelo, 4 figuras grandes y decoración con
+                papelería. Se añaden recordatorios para invitados y 10-12 unidades
+                de 7 tipos de snacks <br> <br>
+                Precio 450€ (Si el evento es fuera de Las Palmas +20€ de
+                gasolina).
+              </p>
+              
+            </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-bold text-gray-800 mb-3">Montaje XL</h3>
-            <p class="text-gray-600 mb-4">
-              El Montaje XL es un set de decoración de 5 a 6 metros que incluye
-              paneles, globos, suelo, 4 figuras grandes y decoración con
-              papelería. Se añaden recordatorios para invitados y 10-12 unidades
-              de 7 tipos de snacks <br> <br>
-              Precio 450€ (Si el evento es fuera de Las Palmas +20€ de
-              gasolina).
-            </p>
-            
-          </div>
-        </div>
 
-        <!-- Montaje con Globos -->
-        <div
-          class="bg-white rounded-2xl shadow-lg overflow-hidden
-            transition duration-700 ease-out transform
-            hover:scale-150 hover:shadow-2xl lg:col-end-3"
-        >
-          <div class="aspect-[16/12] w-full overflow-hidden">
-            <img
-              src="/src/assets/gallery/gallery_29.jpeg"
-              alt="Montaje con Globos"
-              class="object-cover w-full h-full"
-            />
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-bold text-gray-800 mb-3">
-              Montaje con Globos
-            </h3>
-            <p class="text-gray-600 mb-4">
-              Decoración especial con globos de colores y formas únicas.
-            </p>
-            <ul class="text-sm text-gray-500 space-y-1">
-              <li>• Globos decorativos</li>
-              <li>• Arcos de globos</li>
-              <li>• Combinación colorida</li>
-            </ul>
+          <!-- Montaje con Globos -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden
+              transition duration-700 ease-out transform
+              hover:scale-150 hover:shadow-2xl"
+          >
+            <div class="aspect-[16/12] w-full overflow-hidden">
+              <img
+                src="/src/assets/gallery/gallery_29.jpeg"
+                alt="Montaje con Globos"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                Montaje con Globos
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Decoración especial con globos de colores y formas únicas.
+              </p>
+              <ul class="text-sm text-gray-500 space-y-1">
+                <li>• Globos decorativos</li>
+                <li>• Arcos de globos</li>
+                <li>• Combinación colorida</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
