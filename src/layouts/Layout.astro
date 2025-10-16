@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
+import ScrollToTop from "@/components/ScrollToTop.astro";
 const { title = "De'corazón | Decoración y Organización de eventos " } =
   Astro.props;
 ---
@@ -11,13 +12,21 @@ const { title = "De'corazón | Decoración y Organización de eventos " } =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="En De Corazón creemos que cada celebración es una oportunidad para crear momentos que perduren. 
+      Nuestra ilusión es transformar tus ideas en experiencias únicas, llenas de magia y detalles pensados con cariño."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body class="w-screen overflow-x-hidden">
+    <ScrollToTop />
     <Header />
     <ViewTransitions />
     <slot />
   </body>
 </html>
+
+
