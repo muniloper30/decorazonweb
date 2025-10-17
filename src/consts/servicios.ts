@@ -1,7 +1,7 @@
-import montajes from "../assets/servicios/montajeGlobo.jpeg";
-import celebraciones from "../assets/servicios/celebraciones.jpeg";
-import papeleria from "../assets/servicios/papeleria.jpg";
-import detalles from "../assets/servicios/detalles.png";
+import montajes from "../assets/servicios/montajeGlobo.webp";
+import celebraciones from "../assets/servicios/celebraciones.webp";
+import papeleria from "../assets/servicios/papeleria.webp";
+import detalles from "../assets/servicios/detalles.webp";
 
 
 
