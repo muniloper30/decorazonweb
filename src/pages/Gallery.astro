@@ -2,12 +2,17 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { galleryImages } from "@/consts/galleryImages";
+import { galleryBottles } from "@/consts/galleryBottles";
+import { galleryPotatoes } from "@/consts/galleryPotatoes";
+import { gallerySigns } from "@/consts/gallerySigns";
+import { galleryNutellas } from "@/consts/galleryNutellas";
+import { galleryChocolates } from "@/consts/galleryChocolates";
+import { galleryCans } from "@/consts/galleryCans";
+
 import LogoDecorazon from "../assets/logoDcorazon.png";
 ---
 
 <Layout>
-  
-
   <section class="bg-tertiary relative py-30 md:px-6 lg:px-8">
     <div class="mx-auto max-w-6xl" id="gallery">
       <div class="relative mb-12 flex items-center justify-center">
@@ -19,15 +24,17 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         <h2
           class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
         >
-            Galería De'Corazón
+          Galería De'Corazón
         </h2>
       </div>
       <h3
         class="block pb-20 text-center text-lg font-bold text-neutral-800/80 opacity-80 max-md:px-6 max-md:pb-5"
       >
-        Echa un vistazo a algunos de nuestros trabajos recientes y déjate inspirar para tu próximo evento.
+        Echa un vistazo a algunos de nuestros trabajos recientes y déjate
+        inspirar para tu próximo evento.
       </h3>
 
+      <!-- Galería General Mobile -->
       <ul
         id="slider-mobile"
         class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
@@ -38,6 +45,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
               class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
               id={thumb + "slider"}
               data-index={index}
+              data-category="general"
             >
               <Image
                 src={image}
@@ -45,6 +53,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
                 width={950}
                 height={900}
                 data-thumbID={thumb + "slider"}
+                data-category="general"
                 class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
                 loading="lazy"
               />
@@ -53,8 +62,10 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         }
       </ul>
 
+      <!-- Galería General Desktop -->
       <ul
         class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+        id="general-gallery"
       >
         {
           galleryImages.map(({ image, alt, thumb }, index) => (
@@ -62,6 +73,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
               id={thumb}
               class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
               data-index={index}
+              data-category="general"
             >
               <Image
                 src={image}
@@ -69,6 +81,391 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
                 width={950}
                 height={900}
                 data-thumbID={thumb}
+                data-category="general"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Botellas Personalizadas -->
+      <div id="galleryBottles" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
+        <h2
+          class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
+        >
+          Botellas Personalizadas
+        </h2>
+      </div>
+
+      <!-- Botellas Mobile -->
+      <ul
+        id="bottles-slider-mobile"
+        class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryBottles.map(({ image, alt, thumb }, index) => (
+            <li
+              class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              id={thumb + "-bottles-slider"}
+              data-index={index}
+              data-category="bottles"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-bottles-slider"}
+                data-category="bottles"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Botellas Desktop -->
+      <ul
+        class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 mb-20 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryBottles.map(({ image, alt, thumb }, index) => (
+            <li
+              id={thumb + "-bottles"}
+              class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              data-index={index}
+              data-category="bottles"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-bottles"}
+                data-category="bottles"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Papas Personalizadas -->
+      <div id="galleryPotatoes" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
+        <h2
+          class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
+        >
+          Papas Personalizadas
+        </h2>
+      </div>
+
+      <!-- Papas Mobile -->
+      <ul
+        id="potatoes-slider-mobile"
+        class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryPotatoes.map(({ image, alt, thumb }, index) => (
+            <li
+              class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              id={thumb + "-potatoes-slider"}
+              data-index={index}
+              data-category="potatoes"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-potatoes-slider"}
+                data-category="potatoes"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Papas Desktop -->
+      <ul
+        class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 mb-20 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryPotatoes.map(({ image, alt, thumb }, index) => (
+            <li
+              id={thumb + "-potatoes"}
+              class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              data-index={index}
+              data-category="potatoes"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-potatoes"}
+                data-category="potatoes"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Carteles y Manteles -->
+      <div id="gallerySigns" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
+        <h2
+          class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
+        >
+          Carteles y Manteles
+        </h2>
+      </div>
+
+      <!-- Carteles Mobile -->
+      <ul
+        id="signs-slider-mobile"
+        class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          gallerySigns.map(({ image, alt, thumb }, index) => (
+            <li
+              class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              id={thumb + "-signs-slider"}
+              data-index={index}
+              data-category="signs"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-signs-slider"}
+                data-category="signs"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Carteles Desktop -->
+      <ul
+        class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 mb-20 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          gallerySigns.map(({ image, alt, thumb }, index) => (
+            <li
+              id={thumb + "-signs"}
+              class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              data-index={index}
+              data-category="signs"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-signs"}
+                data-category="signs"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Nutellas Personalizadas -->
+      <div id="galleryNutellas" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
+        <h2
+          class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
+        >
+          Nutellas Personalizadas
+        </h2>
+      </div>
+
+      <!-- Nutellas Mobile -->
+      <ul
+        id="nutellas-slider-mobile"
+        class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryNutellas.map(({ image, alt, thumb }, index) => (
+            <li
+              class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              id={thumb + "-nutellas-slider"}
+              data-index={index}
+              data-category="nutellas"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-nutellas-slider"}
+                data-category="nutellas"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Nutellas Desktop -->
+      <ul
+        class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 mb-20 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryNutellas.map(({ image, alt, thumb }, index) => (
+            <li
+              id={thumb + "-nutellas"}
+              class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              data-index={index}
+              data-category="nutellas"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-nutellas"}
+                data-category="nutellas"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Chocolatinas -->
+      <div id="galleryChocolates" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
+        <h2
+          class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
+        >
+          Chocolatinas Personalizadas
+        </h2>
+      </div>
+
+      <!-- Chocolatinas Mobile -->
+      <ul
+        id="chocolates-slider-mobile"
+        class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryChocolates.map(({ image, alt, thumb }, index) => (
+            <li
+              class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              id={thumb + "-chocolates-slider"}
+              data-index={index}
+              data-category="chocolates"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-chocolates-slider"}
+                data-category="chocolates"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Chocolatinas Desktop -->
+      <ul
+        class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 mb-20 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryChocolates.map(({ image, alt, thumb }, index) => (
+            <li
+              id={thumb + "-chocolates"}
+              class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              data-index={index}
+              data-category="chocolates"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-chocolates"}
+                data-category="chocolates"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Latas Personalizadas -->
+      <div id="galleryCans" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
+        <h2
+          class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
+        >
+          Latas Personalizadas
+        </h2>
+      </div>
+
+      <!-- Latas Mobile -->
+      <ul
+        id="cans-slider-mobile"
+        class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryCans.map(({ image, alt, thumb }, index) => (
+            <li
+              class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              id={thumb + "-cans-slider"}
+              data-index={index}
+              data-category="cans"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-cans-slider"}
+                data-category="cans"
+                class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
+                loading="lazy"
+              />
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Latas Desktop -->
+      <ul
+        class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 mb-20 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
+      >
+        {
+          galleryCans.map(({ image, alt, thumb }, index) => (
+            <li
+              id={thumb + "-cans"}
+              class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
+              data-index={index}
+              data-category="cans"
+            >
+              <Image
+                src={image}
+                alt={alt}
+                width={950}
+                height={900}
+                data-thumbID={thumb + "-cans"}
+                data-category="cans"
                 class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
                 loading="lazy"
               />
@@ -77,6 +474,8 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         }
       </ul>
     </div>
+
+    <!-- Modal Lightbox -->
     <div
       class="pointer-events-none fixed inset-0 flex cursor-pointer items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out"
       role="dialog"
@@ -129,26 +528,48 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
 </Layout>
 
 <script>
-  // 1) Función que (re)monta la galería dentro de #gallery
   function bindGallery() {
     const root = document.getElementById("gallery");
     if (!root) return;
 
-    // Recojo de nuevo TODOS los elementos dentro del scope
-    const galleryItems = Array.from(root.querySelectorAll("li img"));
+    // Crear objetos separados para cada categoría
+    const galleries = {
+      general: Array.from(root.querySelectorAll("li img[data-category='general']")),
+      bottles: Array.from(root.querySelectorAll("li img[data-category='bottles']")),
+      potatoes: Array.from(root.querySelectorAll("li img[data-category='potatoes']")),
+      signs: Array.from(root.querySelectorAll("li img[data-category='signs']")),
+      nutellas: Array.from(root.querySelectorAll("li img[data-category='nutellas']")),
+      chocolates: Array.from(root.querySelectorAll("li img[data-category='chocolates']")),
+      cans: Array.from(root.querySelectorAll("li img[data-category='cans']"))
+    };
+
     const lightBox = document.getElementById("lightbox");
     const lightBoxImgContainer = document.getElementById("light-box-content");
     const btnCloseLightBox = document.getElementById("close-lightbox");
     const btnPrev = document.getElementById("prev-image");
     const btnNext = document.getElementById("next-image");
-    const slider = document.getElementById("slider-mobile");
+    
+    // Obtener todos los sliders mobile
+    const sliders = [
+      document.getElementById("slider-mobile"),
+      document.getElementById("bottles-slider-mobile"),
+      document.getElementById("potatoes-slider-mobile"),
+      document.getElementById("signs-slider-mobile"),
+      document.getElementById("nutellas-slider-mobile"),
+      document.getElementById("chocolates-slider-mobile"),
+      document.getElementById("cans-slider-mobile")
+    ].filter(Boolean);
 
     let currentIndex = 0;
+    let currentCategory = 'general';
 
-    const openLightBox = (index) => {
-      if (index < 0 || index >= galleryItems.length) return;
+    const openLightBox = (index, category) => {
+      const categoryGallery = galleries[category];
+      if (index < 0 || index >= categoryGallery.length) return;
+      
       currentIndex = index;
-      const image = galleryItems[index];
+      currentCategory = category;
+      const image = categoryGallery[index];
 
       const previousImage = lightBoxImgContainer.querySelector("img");
       if (previousImage) {
@@ -157,19 +578,32 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         if (galleryParent) galleryParent.appendChild(previousImage);
       }
 
-      galleryItems.forEach((img) => (img.style.viewTransitionName = "none"));
+      // Reset view transition names
+      Object.values(galleries).flat().forEach((img) => (img.style.viewTransitionName = "none"));
       image.style.viewTransitionName = "selected-img";
 
       lightBoxImgContainer.appendChild(image);
       lightBox.classList.remove("opacity-0", "pointer-events-none");
-      lightBox.classList.add("bg-[#de96a1]","z-[9999]","opacity-100","pointer-events-auto","backdrop-blur-[10px]");
+      lightBox.classList.add(
+        "bg-[#de96a1]",
+        "z-[9999]",
+        "opacity-100",
+        "pointer-events-auto",
+        "backdrop-blur-[10px]"
+      );
       document.body.style.overflow = "hidden";
       updateNavigationButtons();
     };
 
     const closeLightBox = (image) => {
       lightBox.classList.add("opacity-0", "pointer-events-none");
-      lightBox.classList.remove("bg-[#de96a1]","z-[9999]","opacity-100","pointer-events-auto","backdrop-blur-[10px]");
+      lightBox.classList.remove(
+        "bg-[#de96a1]",
+        "z-[9999]",
+        "opacity-100",
+        "pointer-events-auto",
+        "backdrop-blur-[10px]"
+      );
       const galleryParentID = image.getAttribute("data-thumbID");
       const galleryParent = document.getElementById(galleryParentID);
       if (galleryParent) galleryParent.appendChild(image);
@@ -177,25 +611,36 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
     };
 
     const navigateLightBox = (direction) => {
+      const categoryGallery = galleries[currentCategory];
       const newIndex = currentIndex + direction;
-      if (newIndex < 0 || newIndex >= galleryItems.length) return;
-      if (!document.startViewTransition) { openLightBox(newIndex); return; }
-      document.startViewTransition(() => openLightBox(newIndex));
+      if (newIndex < 0 || newIndex >= categoryGallery.length) return;
+      
+      if (!document.startViewTransition) {
+        openLightBox(newIndex, currentCategory);
+        return;
+      }
+      document.startViewTransition(() => openLightBox(newIndex, currentCategory));
     };
 
     const updateNavigationButtons = () => {
       if (!btnPrev || !btnNext) return;
+      const categoryGallery = galleries[currentCategory];
       btnPrev.style.display = currentIndex > 0 ? "flex" : "none";
-      btnNext.style.display = currentIndex < galleryItems.length - 1 ? "flex" : "none";
+      btnNext.style.display = currentIndex < categoryGallery.length - 1 ? "flex" : "none";
     };
 
-    // Listeners por tarjeta
-    galleryItems.forEach((image, index) => {
-      image.addEventListener("click", () => {
-        if (!document.startViewTransition) { openLightBox(index); return; }
-        galleryItems.forEach((img) => (img.style.viewTransitionName = ""));
-        image.style.viewTransitionName = "selected-img";
-        document.startViewTransition(() => openLightBox(index));
+    // Event listeners para todas las categorías
+    Object.entries(galleries).forEach(([category, images]) => {
+      images.forEach((image, index) => {
+        image.addEventListener("click", () => {
+          if (!document.startViewTransition) {
+            openLightBox(index, category);
+            return;
+          }
+          Object.values(galleries).flat().forEach((img) => (img.style.viewTransitionName = ""));
+          image.style.viewTransitionName = "selected-img";
+          document.startViewTransition(() => openLightBox(index, category));
+        });
       });
     });
 
@@ -203,68 +648,96 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
     const handleClose = async () => {
       const image = lightBoxImgContainer.querySelector("img");
       if (!image) return;
-      if (!document.startViewTransition) { closeLightBox(image); return; }
-      const animation = document.startViewTransition(() => closeLightBox(image));
+      if (!document.startViewTransition) {
+        closeLightBox(image);
+        return;
+      }
+      const animation = document.startViewTransition(() =>
+        closeLightBox(image)
+      );
       await animation.finished;
       image.style.viewTransitionName = "none";
     };
 
     lightBox.addEventListener("click", handleClose);
-    btnCloseLightBox?.addEventListener("click", (e) => { e.stopPropagation(); handleClose(); });
-    btnPrev?.addEventListener("click", (e) => { e.stopPropagation(); navigateLightBox(-1); });
-    btnNext?.addEventListener("click", (e) => { e.stopPropagation(); navigateLightBox(1); });
+    btnCloseLightBox?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      handleClose();
+    });
+    btnPrev?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navigateLightBox(-1);
+    });
+    btnNext?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navigateLightBox(1);
+    });
 
     document.addEventListener("keydown", async (event) => {
       const isLightboxOpen = !lightBox.classList.contains("opacity-0");
       if (event.key === "Escape") await handleClose();
-      else if ((event.key === "ArrowRight" || event.key === "d") && isLightboxOpen) { event.preventDefault(); navigateLightBox(1); }
-      else if ((event.key === "ArrowLeft" || event.key === "a") && isLightboxOpen) { event.preventDefault(); navigateLightBox(-1); }
+      else if (
+        (event.key === "ArrowRight" || event.key === "d") &&
+        isLightboxOpen
+      ) {
+        event.preventDefault();
+        navigateLightBox(1);
+      } else if (
+        (event.key === "ArrowLeft" || event.key === "a") &&
+        isLightboxOpen
+      ) {
+        event.preventDefault();
+        navigateLightBox(-1);
+      }
     });
 
-    // Slider mobile (protegido si no existe)
-    if (slider) {
-      const sliderItems = Array.from(slider.children);
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          (entry.target).style.transform = entry.isIntersecting ? "scale(1)" : "scale(0.8)";
-        });
-      }, { root: slider, threshold: 0.9 });
+    // Aplicar observer a todos los sliders mobile
+    sliders.forEach(slider => {
+      if (slider) {
+        const sliderItems = Array.from(slider.children);
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.target.style.transform = entry.isIntersecting
+                ? "scale(1)"
+                : "scale(0.8)";
+            });
+          },
+          { root: slider, threshold: 0.9 }
+        );
 
-      sliderItems.forEach((item) => observer.observe(item));
-    }
+        sliderItems.forEach((item) => observer.observe(item));
+      }
+    });
   }
 
-  // 2) Primera carga + re-enganche tras navegación parcial de Astro
   document.addEventListener("DOMContentLoaded", bindGallery);
-  document.addEventListener("astro:page-load", bindGallery);   // recomendado por Astro
-  document.addEventListener("astro:after-swap", bindGallery);   // tras transiciones
+  document.addEventListener("astro:page-load", bindGallery);
+  document.addEventListener("astro:after-swap", bindGallery);
 </script>
 
-
 <style>
-  
   .title {
     position: absolute;
     color: #de96a1;
     animation: heartBeat 3s ease-in-out infinite;
   }
- @keyframes heartBeat {
-  0%,
-  100% {
-    
-    transform: scale(1);
+  @keyframes heartBeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
   }
-  50% {
-   
-    transform: scale(1.08);
-  }
-}
 
-  #slider-mobile {
+  /* Aplicar scrollbar-width a todos los sliders */
+  [id$="-slider-mobile"], #slider-mobile {
     scrollbar-width: none;
   }
 
-  #slider-mobile::-webkit-scrollbar {
+  [id$="-slider-mobile"]::-webkit-scrollbar, #slider-mobile::-webkit-scrollbar {
     display: none;
   }
 </style>
