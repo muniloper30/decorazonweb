@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { cupAndBottles } from "../consts/cupAndBottles";
 ---
 
 <Layout>
@@ -7,9 +9,12 @@ import Layout from "../layouts/Layout.astro";
   <section class="py-1 bg-gradient-to-b from-tertiary/100 to-white">
     <div class="mx-auto max-w-6xl px-6">
       <div class="text-center mt-10">
-        <h1 class="text-5xl font-bold text-gray-800 mb-6">Detalles y Regalos</h1>
+        <h1 class="text-5xl font-bold text-gray-800 mb-6">
+          Detalles y Regalos
+        </h1>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Encuentra el detalle perfecto para cada ocasión especial. Desde regalos personalizados hasta decoraciones únicas.
+          Encuentra el detalle perfecto para cada ocasión especial. Desde
+          regalos personalizados hasta decoraciones únicas.
         </p>
       </div>
     </div>
@@ -19,63 +24,237 @@ import Layout from "../layouts/Layout.astro";
   <section class="py-20 bg-white min-h-screen">
     <div class="mx-auto max-w-7xl px-6">
       <div class="flex flex-col lg:flex-row gap-8">
-        
         <!-- Sidebar -->
         <div class="lg:w-1/4">
           <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
               Categorías
             </h2>
-            
+
             <nav class="space-y-2">
-              <button 
+              <div></div>
+              <button
                 onclick="showSection('tazas-botellas')"
-                class="w-full text-left px-4 py-3 rounded-xl bg-primary text-white font-semibold transition-all duration-300 hover:bg-primary/80 active-section cursor-pointer"
+                class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-primary text-white font-semibold transition-all duration-300 hover:bg-primary/80 active-section cursor-pointer"
                 id="btn-tazas-botellas"
               >
-                ☕ Tazas y Botellas
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-coffee"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1"
+                  ></path>
+                  <path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path>
+                  <path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path>
+                  <path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5z"
+                  ></path>
+                  <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555"></path>
+                </svg>
+                Tazas y Botellas
               </button>
-              
-              <button 
+
+              <button
                 onclick="showSection('bolsos')"
-                class="w-full text-left px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
+                class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
                 id="btn-bolsos"
               >
-                👜 Bolsos
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z"
+                  ></path>
+                  <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
+                </svg>
+                Bolsos
               </button>
-              
-              <button 
+
+              <button
                 onclick="showSection('dia-padre')"
-                class="w-full text-left px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
+                class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
                 id="btn-dia-padre"
               >
-                👨‍👧‍👦 Día del Padre
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  height="24"
+                  width="24"
+                >
+                  <path
+                    fill="#000000"
+                    d="M6.502 5.8248c-0.50135 0 -0.93115 -0.1785 -1.2895 -0.5355 -0.358335 -0.356995 -0.5375 -0.78616 -0.5375 -1.287495 0 -0.501335 0.1785 -0.931165 0.5355 -1.2895 0.357 -0.358335 0.78615 -0.5375 1.2875 -0.5375 0.50135 0 0.93115 0.1785 1.2895 0.5355 0.35835 0.357 0.5375 0.786165 0.5375 1.2875 0 0.501335 -0.1785 0.931165 -0.5355 1.289495 -0.357 0.35835 -0.78615 0.5375 -1.2875 0.5375Zm10.873 5.675c-0.41665 0 -0.77085 -0.14585 -1.0625 -0.4375 -0.29165 -0.29165 -0.4375 -0.64585 -0.4375 -1.0625 0 -0.41665 0.14585 -0.77085 0.4375 -1.0625 0.29165 -0.29165 0.64585 -0.4375 1.0625 -0.4375 0.41665 0 0.77085 0.14585 1.0625 0.4375 0.29165 0.29165 0.4375 0.64585 0.4375 1.0625 0 0.41665 -0.14585 0.77085 -0.4375 1.0625 -0.29165 0.29165 -0.64585 0.4375 -1.0625 0.4375Zm-12.625 9.75v-6.5h-1c-0.2125 0 -0.390585 -0.0719 -0.53425 -0.21575C3.071915 14.3904 3 14.2123 3 13.9998v-5.5c0 -0.4125 0.146915 -0.76565 0.44075 -1.0595 0.293665 -0.29365 0.64675 -0.4405 1.05925 -0.4405h3.8c0.29085 0 0.55515 0.075 0.793 0.225 0.238 0.15 0.42365 0.35835 0.557 0.625l3.4 6.95 1.825 -1.95c0.1 -0.11665 0.21965 -0.20415 0.359 -0.2625 0.13915 -0.05835 0.28615 -0.0875 0.441 -0.0875h3.225c0.3055 0 0.56525 0.1069 0.77925 0.32075 0.21385 0.214 0.32075 0.47375 0.32075 0.77925v3.4c0 0.21665 -0.07085 0.39585 -0.2125 0.5375s-0.32085 0.2125 -0.5375 0.2125h-0.5v3.5c0 0.2125 -0.07185 0.3906 -0.2155 0.53425 -0.14385 0.14385 -0.322 0.21575 -0.5345 0.21575h-2c-0.2125 0 -0.3906 -0.0719 -0.53425 -0.21575 -0.14385 -0.14365 -0.21575 -0.32175 -0.21575 -0.53425v-6.825l-1.25 1.325c-0.08335 0.08335 -0.17085 0.14585 -0.2625 0.1875 -0.09165 0.04165 -0.19775 0.0625 -0.31825 0.0625h-0.9235c-0.14715 0 -0.2819 -0.03725 -0.40425 -0.11175 -0.12235 -0.07465 -0.2195 -0.1791 -0.2915 -0.31325l-3.05 -6.15v11.825c0 0.2125 -0.07185 0.3906 -0.2155 0.53425 -0.14385 0.14385 -0.322 0.21575 -0.5345 0.21575h-2.5c-0.2125 0 -0.3906 -0.0719 -0.53425 -0.21575 -0.143835 -0.14365 -0.21575 -0.32175 -0.21575 -0.53425Z"
+                    stroke-width="0.5"></path>
+                </svg>
+                Día del Padre
               </button>
-              
-              <button 
+
+              <button
                 onclick="showSection('dia-madre')"
-                class="w-full text-left px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
+                class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
                 id="btn-dia-madre"
               >
-                👩‍👧‍👦 Día de la Madre
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                  height="24"
+                  width="24"
+                >
+                  <g id="walker--disability-walker">
+                    <path
+                      id="Vector 662"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m0.844727 13 0.892853 -2.5m3.52844 0L5.2661 13"
+                      stroke-width="1"></path>
+                    <path
+                      id="Vector 663"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.65328 6.97015c-0.72083 -0.13559 -1.76402 -0.60793 -2.24947 -1.02179"
+                      stroke-width="1"></path>
+                    <path
+                      id="Vector 660"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9.35742 7.5h1.14278c0.6164 0 1.1 0.3 1.5 1.5 0.2412 0.72356 0.6977 2.0551 0.8172 2.4814"
+                      stroke-width="1"></path>
+                    <path
+                      id="Vector 661"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12.2328 9.7915h-0.8548c-0.7206 0 -1.38547 0.3877 -1.74045 1.0148l-0.41053 0.7252"
+                      stroke-width="1"></path>
+                    <path
+                      id="Rectangle 150"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.10591 6.58503C2.18751 5.68734 2.94017 5 3.84156 5v0C4.86639 5 5.67 5.87998 5.57722 6.9006L5.25 10.5h-3.5l0.35591 -3.91497Z"
+                      stroke-width="1"></path>
+                    <path
+                      id="Vector"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.88852 13.143c0.47454 0 0.85923 -0.3847 0.85923 -0.8592 0 -0.4746 -0.38469 -0.8592 -0.85923 -0.8592 -0.47454 0 -0.85922 0.3846 -0.85922 0.8592 0 0.4745 0.38468 0.8592 0.85922 0.8592Z"
+                      stroke-width="1"></path>
+                    <path
+                      id="Vector_2"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12.596 13.143c0.4746 0 0.8593 -0.3847 0.8593 -0.8592 0 -0.4746 -0.3847 -0.8592 -0.8593 -0.8592 -0.4745 0 -0.8592 0.3846 -0.8592 0.8592 0 0.4745 0.3847 0.8592 0.8592 0.8592Z"
+                      stroke-width="1"></path>
+                    <path
+                      id="Vector_3"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 5c1.12 0 1.75 -0.63 1.75 -1.75S5.12 1.5 4 1.5s-1.75 0.63 -1.75 1.75S2.88 5 4 5Z"
+                      stroke-width="1"></path>
+                  </g>
+                </svg>
+                Día de la Madre
               </button>
-              
-              <button 
-                onclick="showSection('navidad')"
-                class="w-full text-left px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
-                id="btn-navidad"
-              >
-                🎄 Navidad
-              </button>
-              
-              <button 
-                onclick="showSection('san-valentin')"
-                class="w-full text-left px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
-                id="btn-san-valentin"
-              >
-                💕 San Valentín
-              </button>
-              
+
+              <button
+  onclick="showSection('navidad')"
+  class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
+  id="btn-navidad"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="-0.5 -0.5 16 16"
+    height="24"
+    width="24"
+  >
+    <path d="m11.6938 11.7063 -8.3875 0 2.1 -2.4 4.1875 0 2.1 2.4z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+    <path d="m10.4938 9.30625 -5.9875 0 1.99375 -2.39375 2 0 1.99375 2.39375z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+    <path d="m9.3 6.9125 -3.59375 0L7.5 3.91875l1.8 2.99375z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+    <path d="m7.5 1.44375 0.1875 0.375 0.4125 0.05625 -0.3 0.29375 0.06875 0.4125 -0.36875 -0.19375 -0.36875 0.19375 0.06875 -0.4125 -0.3 -0.29375 0.4125 -0.05625 0.1875 -0.375z" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+    <path d="m7.5 14.1 0 -2.39375" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+    <path d="m14.6875 14.1 -14.375 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path>
+  </svg>
+  Navidad
+</button>
+
+
+<button
+onclick="showSection('san-valentin')"
+class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-gray-200 cursor-pointer"
+id="btn-san-valentin"
+>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="-0.5 -0.5 16 16"
+  height="24"
+  width="24"
+>
+  <path
+    d="M9.8125 3.33125a2.78125 2.78125 0 0 0 -2.325 1.25 2.79375 2.79375 0 0 0 -5.11875 1.5375c0 4.1875 5.11875 5.58125 5.11875 5.58125s5.1125 -1.39375 5.1125 -5.58125a2.7875 2.7875 0 0 0 -2.7875 -2.7875Z"
+    fill="none"
+    stroke="#000000"
+    stroke-miterlimit="10"
+    stroke-width="1"
+  ></path>
+  <path
+    d="m2.70625 12.29375 4.78125 -4.78125"
+    fill="none"
+    stroke="#000000"
+    stroke-miterlimit="10"
+    stroke-width="1"
+  ></path>
+  <path
+    d="m11.375 3.625 2.6875 -2.6875"
+    fill="none"
+    stroke="#000000"
+    stroke-miterlimit="10"
+    stroke-width="1"
+  ></path>
+  <path
+    d="m11.66875 0.9375 2.39375 0 0 2.39375"
+    fill="none"
+    stroke="#000000"
+    stroke-miterlimit="10"
+    stroke-width="1"
+  ></path>
+  <path
+    d="m0.3125 12.29375 2.39375 0 0 2.39375"
+    fill="none"
+    stroke="#000000"
+    stroke-miterlimit="10"
+    stroke-width="1"
+  ></path>
+</svg>
+San Valentín
+</button>
+
             </nav>
           </div>
         </div>
@@ -83,29 +262,136 @@ import Layout from "../layouts/Layout.astro";
         <!-- Main Content Area -->
         <div class="lg:w-3/4">
           <div class="bg-white rounded-2xl shadow-lg p-8">
-            
             <!-- Tazas y Botellas Section -->
             <div id="section-tazas-botellas" class="content-section">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">☕ Tazas y Botellas Personalizadas</h2>
+              <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                ☕ Tazas y Botellas Personalizadas
+              </h2>
               <p class="text-lg text-gray-600 mb-8">
-                Transformamos tazas y botellas en regalos únicos y personalizados. Perfectas para cualquier ocasión especial, 
-                desde cumpleaños hasta aniversarios. Cada pieza es diseñada con amor y atención al detalle.
+                Transformamos tazas y botellas en regalos únicos y
+                personalizados. Perfectas para cualquier ocasión especial, desde
+                cumpleaños hasta aniversarios. Cada pieza es diseñada con amor y
+                atención al detalle.
               </p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
-                    <img src="/src/assets/galleryBottles/bottles_01.webp" alt="Botella personalizada 1" class="object-cover w-full h-full" />
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[0].image}
+                      alt={cupAndBottles[0].alt}
+                      class="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
-                    <img src="/src/assets/galleryBottles/bottles_02.webp" alt="Botella personalizada 2" class="object-cover w-full h-full" />
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[1].image}
+                      alt={cupAndBottles[1].alt}
+                      class="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
-                    <img src="/src/assets/galleryBottles/bottles_03.webp" alt="Botella personalizada 3" class="object-cover w-full h-full" />
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[2].image}
+                      alt={cupAndBottles[2].alt}
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[3].image}
+                      alt={cupAndBottles[2].alt}
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[4].image}
+                      alt={cupAndBottles[2].alt}
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[5].image}
+                      alt={cupAndBottles[2].alt}
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[6].image}
+                      alt={cupAndBottles[2].alt}
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[7].image}
+                      alt={cupAndBottles[2].alt}
+                      class="object-cover w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
+                    <Image
+                      src={cupAndBottles[8].image}
+                      alt={cupAndBottles[2].alt}
+                      class="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -113,31 +399,48 @@ import Layout from "../layouts/Layout.astro";
 
             <!-- Bolsos Section -->
             <div id="section-bolsos" class="content-section hidden">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">👜 Bolsos Personalizados</h2>
+              <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                👜 Bolsos Personalizados
+              </h2>
               <p class="text-lg text-gray-600 mb-8">
-                Bolsos únicos y personalizados para todas las ocasiones. Desde bolsos de playa hasta mochilas escolares, 
-                cada diseño refleja la personalidad y estilo de quien lo lleva.
+                Bolsos únicos y personalizados para todas las ocasiones. Desde
+                bolsos de playa hasta mochilas escolares, cada diseño refleja la
+                personalidad y estilo de quien lo lleva.
               </p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">👜</div>
                       <p>Imagen de bolso personalizado</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🎒</div>
                       <p>Mochila personalizada</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🛍️</div>
                       <p>Bolso de compras</p>
@@ -149,31 +452,49 @@ import Layout from "../layouts/Layout.astro";
 
             <!-- Día del Padre Section -->
             <div id="section-dia-padre" class="content-section hidden">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">👨‍👧‍👦 Día del Padre</h2>
+              <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                👨‍👧‍👦 Día del Padre
+              </h2>
               <p class="text-lg text-gray-600 mb-8">
-                Regalos especiales para papá en su día. Desde tazas personalizadas hasta botellas con mensajes emotivos, 
-                creamos detalles únicos que expresan todo el amor y gratitud hacia el padre especial en tu vida.
+                Regalos especiales para papá en su día. Desde tazas
+                personalizadas hasta botellas con mensajes emotivos, creamos
+                detalles únicos que expresan todo el amor y gratitud hacia el
+                padre especial en tu vida.
               </p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">☕</div>
                       <p>Taza para papá</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🍺</div>
                       <p>Botella personalizada</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🎁</div>
                       <p>Regalo especial</p>
@@ -185,31 +506,48 @@ import Layout from "../layouts/Layout.astro";
 
             <!-- Día de la Madre Section -->
             <div id="section-dia-madre" class="content-section hidden">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">👩‍👧‍👦 Día de la Madre</h2>
+              <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                👩‍👧‍👦 Día de la Madre
+              </h2>
               <p class="text-lg text-gray-600 mb-8">
-                Detalles únicos y emotivos para mamá. Cada regalo está diseñado con cariño para expresar todo el amor 
-                y agradecimiento hacia la mujer más especial de tu vida.
+                Detalles únicos y emotivos para mamá. Cada regalo está diseñado
+                con cariño para expresar todo el amor y agradecimiento hacia la
+                mujer más especial de tu vida.
               </p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🌹</div>
                       <p>Regalo para mamá</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">💐</div>
                       <p>Detalle floral</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">💝</div>
                       <p>Regalo especial</p>
@@ -223,29 +561,44 @@ import Layout from "../layouts/Layout.astro";
             <div id="section-navidad" class="content-section hidden">
               <h2 class="text-3xl font-bold text-gray-800 mb-6">🎄 Navidad</h2>
               <p class="text-lg text-gray-600 mb-8">
-                Regalos navideños únicos y personalizados. Desde tazas con motivos navideños hasta botellas especiales, 
-                creamos la magia de la Navidad en cada detalle.
+                Regalos navideños únicos y personalizados. Desde tazas con
+                motivos navideños hasta botellas especiales, creamos la magia de
+                la Navidad en cada detalle.
               </p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🎅</div>
                       <p>Regalo navideño</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🎁</div>
                       <p>Detalle navideño</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🌟</div>
                       <p>Regalo especial</p>
@@ -257,31 +610,48 @@ import Layout from "../layouts/Layout.astro";
 
             <!-- San Valentín Section -->
             <div id="section-san-valentin" class="content-section hidden">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">💕 San Valentín</h2>
+              <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                💕 San Valentín
+              </h2>
               <p class="text-lg text-gray-600 mb-8">
-                Regalos románticos y personalizados para el Día de San Valentín. Cada detalle está diseñado para expresar 
-                el amor y crear momentos inolvidables con tu pareja.
+                Regalos románticos y personalizados para el Día de San Valentín.
+                Cada detalle está diseñado para expresar el amor y crear
+                momentos inolvidables con tu pareja.
               </p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">💕</div>
                       <p>Regalo romántico</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🌹</div>
                       <p>Detalle especial</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">💝</div>
                       <p>Regalo personalizado</p>
@@ -293,31 +663,48 @@ import Layout from "../layouts/Layout.astro";
 
             <!-- Graduaciones Section -->
             <div id="section-graduaciones" class="content-section hidden">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">🎓 Graduaciones</h2>
+              <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                🎓 Graduaciones
+              </h2>
               <p class="text-lg text-gray-600 mb-8">
-                Celebra los logros académicos con regalos únicos y personalizados. Desde tazas conmemorativas hasta 
-                botellas especiales, cada detalle honra este momento tan importante.
-              </p  >
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                Celebra los logros académicos con regalos únicos y
+                personalizados. Desde tazas conmemorativas hasta botellas
+                especiales, cada detalle honra este momento tan importante.
+              </p>
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🎓</div>
                       <p>Regalo graduación</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🏆</div>
                       <p>Detalle conmemorativo</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">🎉</div>
                       <p>Regalo especial</p>
@@ -331,29 +718,44 @@ import Layout from "../layouts/Layout.astro";
             <div id="section-bautizos" class="content-section hidden">
               <h2 class="text-3xl font-bold text-gray-800 mb-6">👶 Bautizos</h2>
               <p class="text-lg text-gray-600 mb-8">
-                Regalos especiales para el bautizo de tu pequeño. Desde tazas conmemorativas hasta botellas personalizadas, 
-                cada detalle celebra este momento sagrado y especial en la vida del bebé.
+                Regalos especiales para el bautizo de tu pequeño. Desde tazas
+                conmemorativas hasta botellas personalizadas, cada detalle
+                celebra este momento sagrado y especial en la vida del bebé.
               </p>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              >
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">👶</div>
                       <p>Regalo bautizo</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">⛪</div>
                       <p>Detalle religioso</p>
                     </div>
                   </div>
                 </div>
-                <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                  <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                <div
+                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
+                >
+                  <div
+                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
+                  >
                     <div class="text-center text-gray-500">
                       <div class="text-6xl mb-4">💝</div>
                       <p>Regalo especial</p>
@@ -362,7 +764,6 @@ import Layout from "../layouts/Layout.astro";
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -376,7 +777,8 @@ import Layout from "../layouts/Layout.astro";
         ¿Listo para personalizar tu regalo?
       </h2>
       <p class="text-xl text-white/90 mb-8">
-        Contacta con nosotros y crearemos el detalle perfecto para tu ocasión especial
+        Contacta con nosotros y crearemos el detalle perfecto para tu ocasión
+        especial
       </p>
       <a
         href="/Form"
@@ -391,35 +793,35 @@ import Layout from "../layouts/Layout.astro";
 <script is:inline>
   function showSection(sectionId) {
     // Ocultar todas las secciones
-    const sections = document.querySelectorAll('.content-section');
-    sections.forEach(section => {
-      section.classList.add('hidden');
+    const sections = document.querySelectorAll(".content-section");
+    sections.forEach((section) => {
+      section.classList.add("hidden");
     });
 
     // Mostrar la sección seleccionada
     const targetSection = document.getElementById(`section-${sectionId}`);
     if (targetSection) {
-      targetSection.classList.remove('hidden');
+      targetSection.classList.remove("hidden");
     }
 
     // Actualizar estilos de los botones
     const buttons = document.querySelectorAll('button[id^="btn-"]');
-    buttons.forEach(button => {
-      button.classList.remove('bg-primary', 'text-white');
-      button.classList.add('bg-gray-100', 'text-gray-700');
+    buttons.forEach((button) => {
+      button.classList.remove("bg-primary", "text-white");
+      button.classList.add("bg-gray-100", "text-gray-700");
     });
 
     // Resaltar el botón activo
     const activeButton = document.getElementById(`btn-${sectionId}`);
     if (activeButton) {
-      activeButton.classList.remove('bg-gray-100', 'text-gray-700');
-      activeButton.classList.add('bg-primary', 'text-white');
+      activeButton.classList.remove("bg-gray-100", "text-gray-700");
+      activeButton.classList.add("bg-primary", "text-white");
     }
   }
 
   // Inicializar con la primera sección visible
-  document.addEventListener('DOMContentLoaded', function() {
-    showSection('tazas-botellas');
+  document.addEventListener("DOMContentLoaded", function () {
+    showSection("tazas-botellas");
   });
 </script>
 
@@ -427,15 +829,15 @@ import Layout from "../layouts/Layout.astro";
   .content-section {
     transition: opacity 0.3s ease-in-out;
   }
-  
+
   .content-section.hidden {
     display: none;
   }
-  
+
   button[id^="btn-"] {
     transition: all 0.3s ease;
   }
-  
+
   button[id^="btn-"]:hover {
     transform: translateX(5px);
   }
