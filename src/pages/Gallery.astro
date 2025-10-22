@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import { galleryImages } from "@/consts/galleryImages";
 import { galleryBottles } from "@/consts/galleryBottles";
 import { galleryPotatoes } from "@/consts/galleryPotatoes";
-import { gallerySigns } from "@/consts/gallerySigns";
+import { galleryLollipops } from "@/consts/galleryLollipops";
 import { galleryNutellas } from "@/consts/galleryNutellas";
 import { galleryChocolates } from "@/consts/galleryChocolates";
 import { galleryCans } from "@/consts/galleryCans";
@@ -240,27 +240,27 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         </a>
       </div>
 
-      <!-- Carteles y Manteles -->
-      <div id="gallerySigns" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
+      <!-- Chupachups personalizados -->
+      <div id="galleryLollipops" class="scroll-mt-[120px] relative mt-20 mb-12 flex items-center justify-center">
         <h2
           class="title mb-2 block p-4 text-center text-[1.65rem] font-bold text-white sm:text-sm lg:text-4xl xl:text-5xl"
         >
-          Carteles y Manteles
+          Chupachups personalizados
         </h2>
       </div>
 
-      <!-- Carteles Mobile -->
+      <!-- Lollipops Mobile -->
       <ul
-        id="signs-slider-mobile"
+        id="lollipops-slider-mobile"
         class="flex snap-x snap-mandatory overflow-x-auto p-10 md:hidden [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(odd)]:rotate-[-2deg]"
       >
         {
-          gallerySigns.map(({ image, alt, thumb }, index) => (
+          galleryLollipops.map(({ image, alt, thumb }, index) => (
             <li
               class="-m-1 aspect-9/10 w-72 shrink-0 cursor-pointer snap-center rounded-md shadow-sm transition-transform duration-300 will-change-transform"
-              id={thumb + "-signs-slider"}
+              id={thumb + "-lollipops-slider"}
               data-index={index}
-              data-category="signs"
+              data-category="lollipops"
             >
               <Image
                 src={image}
@@ -282,12 +282,12 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         class="hidden grid-cols-1 gap-8 sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid-cols-4 mb-8 [&>*:nth-child(even)]:rotate-2 [&>*:nth-child(n)]:hover:scale-105 [&>*:nth-child(n)]:hover:rotate-0 [&>*:nth-child(n)]:hover:shadow-xl [&>*:nth-child(odd)]:rotate-[-2deg]"
       >
         {
-          gallerySigns.map(({ image, alt, thumb }, index) => (
+          galleryLollipops.map(({ image, alt, thumb }, index) => (
             <li
               id={thumb + "-signs"}
               class="aspect-9/10 cursor-pointer rounded-md shadow-sm transition-transform duration-300 will-change-transform"
               data-index={index}
-              data-category="signs"
+              data-category="Lollipops"
             >
               <Image
                 src={image}
@@ -295,7 +295,7 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
                 width={950}
                 height={900}
                 data-thumbID={thumb + "-signs"}
-                data-category="signs"
+                data-category="Lollipops"
                 class="border-theme-blue-light h-full w-full rounded-md border border-dashed object-cover"
                 loading="lazy"
               />
