@@ -7,6 +7,9 @@ import GalleryImg6 from "@/assets/giftGallery/cupsAndBottles/tazbot_06.webp"
 import GalleryImg7 from "@/assets/giftGallery/cupsAndBottles/tazbot_07.webp"
 import GalleryImg8 from "@/assets/giftGallery/cupsAndBottles/tazbot_08.webp"
 import GalleryImg9 from "@/assets/giftGallery/cupsAndBottles/tazbot_09.webp"
+import GalleryImg10 from "@/assets/giftGallery/cupsAndBottles/tazbot_10.webp"
+import GalleryImg11 from "@/assets/giftGallery/cupsAndBottles/tazbot_11.webp"
+import GalleryImg12 from "@/assets/giftGallery/cupsAndBottles/tazbot_12.webp"
 
 export const cupAndBottles = [
     { image: GalleryImg1, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb1" },
@@ -17,5 +20,9 @@ export const cupAndBottles = [
     { image: GalleryImg6, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb6" },
     { image: GalleryImg7, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb7" },
     { image: GalleryImg8, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb8" },
-    { image: GalleryImg9, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb9" }
+    { image: GalleryImg9, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb9" },
+    { image: GalleryImg10, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb10" },
+    { image: GalleryImg11, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb11" },
+    { image: GalleryImg12, alt: "Tazas y botellas personalizadas para eventos", thumb: "thumb12" },
+    
 ]
