@@ -3,12 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { cupAndBottles } from "../consts/cupAndBottles";
 import { bagsGallery } from "../consts/bagsGallery";
+import { fatherGifts } from "../consts/fatherGifts";
+import { motherGifts } from "../consts/motherGifts";
 
 // Orden concreto de imágenes que ya usabas
 const cupOrder = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 15, 19, 17, 9, 10, 11, 18,
 ];
-const bagsOrder = [0, 1, 2, 3, 4, 5, 7, 6 , 8, 9, 10, 11, 12, 13, 14, ];
+const bagsOrder = [0, 1, 2, 3, 4, 5, 7, 6, 8, 9, 10, 11, 12, 13, 14];
+const fatherGiftsOrder = [0, 1, 2];
+const motherGiftsOrder = [0, 1, 2 ,3, 4, 5];
 ---
 
 <Layout>
@@ -420,46 +424,22 @@ const bagsOrder = [0, 1, 2, 3, 4, 5, 7, 6 , 8, 9, 10, 11, 12, 13, 14, ];
                 detalles únicos que expresan todo el amor y gratitud hacia el
                 padre especial en tu vida.
               </p>
-
               <div
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
               >
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">☕</div>
-                      <p>Taza para papá</p>
+                {
+                  fatherGiftsOrder.map((index) => (
+                    <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
+                      <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                        <Image
+                          src={fatherGifts[index].image}
+                          alt={fatherGifts[index].alt}
+                          class="object-cover w-full h-full"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🍺</div>
-                      <p>Botella personalizada</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🎁</div>
-                      <p>Regalo especial</p>
-                    </div>
-                  </div>
-                </div>
+                  ))
+                }
               </div>
             </div>
 
@@ -543,42 +523,19 @@ const bagsOrder = [0, 1, 2, 3, 4, 5, 7, 6 , 8, 9, 10, 11, 12, 13, 14, ];
               <div
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
               >
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🌹</div>
-                      <p>Regalo para mamá</p>
+                {
+                  motherGiftsOrder.map((index) => (
+                    <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
+                      <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                        <Image
+                          src={motherGifts[index].image}
+                          alt={motherGifts[index].alt}
+                          class="object-cover w-full h-full"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">💐</div>
-                      <p>Detalle floral</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">💝</div>
-                      <p>Regalo especial</p>
-                    </div>
-                  </div>
-                </div>
+                  ))
+                }
               </div>
             </div>
 
