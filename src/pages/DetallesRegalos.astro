@@ -3,8 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { cupAndBottles } from "../consts/cupAndBottles";
 import { bagsGallery } from "../consts/bagsGallery";
-import { fatherGifts } from "../consts/fatherGifts";
-import { motherGifts } from "../consts/motherGifts";
+import { parentsGifts } from "../consts/parentsGifts";
 import { christmasGifts } from "../consts/christmasGifts";
 
 // Orden concreto de imágenes que ya usabas
@@ -12,8 +11,7 @@ const cupOrder = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 12, 13, 14, 15, 19, 17, 9, 10, 11, 18,
 ];
 const bagsOrder = [0, 1, 2, 3, 4, 5, 7, 6, 8, 9, 10, 11, 12, 13, 14];
-const fatherGiftsOrder = [0, 1, 2];
-const motherGiftsOrder = [0, 1, 2, 3, 4, 5];
+const parentsGiftsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const christmasGiftsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 ---
 
@@ -105,97 +103,28 @@ const christmasGiftsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
               </button>
 
               <button
-                onclick="showSection('dia-padre')"
+                onclick="showSection('dia-padreMadre')"
                 class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-primary/80 cursor-pointer"
-                id="btn-dia-padre"
+                id="btn-dia-padreMadre"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
+                  id="Changin-Room-Family--Streamline-Guidance-Free"
                   height="24"
                   width="24"
                 >
+                  <desc>
+                    Changin Room Family Streamline Icon:
+                    https://streamlinehq.com
+                  </desc>
                   <path
-                    fill="#000000"
-                    d="M6.502 5.8248c-0.50135 0 -0.93115 -0.1785 -1.2895 -0.5355 -0.358335 -0.356995 -0.5375 -0.78616 -0.5375 -1.287495 0 -0.501335 0.1785 -0.931165 0.5355 -1.2895 0.357 -0.358335 0.78615 -0.5375 1.2875 -0.5375 0.50135 0 0.93115 0.1785 1.2895 0.5355 0.35835 0.357 0.5375 0.786165 0.5375 1.2875 0 0.501335 -0.1785 0.931165 -0.5355 1.289495 -0.357 0.35835 -0.78615 0.5375 -1.2875 0.5375Zm10.873 5.675c-0.41665 0 -0.77085 -0.14585 -1.0625 -0.4375 -0.29165 -0.29165 -0.4375 -0.64585 -0.4375 -1.0625 0 -0.41665 0.14585 -0.77085 0.4375 -1.0625 0.29165 -0.29165 0.64585 -0.4375 1.0625 -0.4375 0.41665 0 0.77085 0.14585 1.0625 0.4375 0.29165 0.29165 0.4375 0.64585 0.4375 1.0625 0 0.41665 -0.14585 0.77085 -0.4375 1.0625 -0.29165 0.29165 -0.64585 0.4375 -1.0625 0.4375Zm-12.625 9.75v-6.5h-1c-0.2125 0 -0.390585 -0.0719 -0.53425 -0.21575C3.071915 14.3904 3 14.2123 3 13.9998v-5.5c0 -0.4125 0.146915 -0.76565 0.44075 -1.0595 0.293665 -0.29365 0.64675 -0.4405 1.05925 -0.4405h3.8c0.29085 0 0.55515 0.075 0.793 0.225 0.238 0.15 0.42365 0.35835 0.557 0.625l3.4 6.95 1.825 -1.95c0.1 -0.11665 0.21965 -0.20415 0.359 -0.2625 0.13915 -0.05835 0.28615 -0.0875 0.441 -0.0875h3.225c0.3055 0 0.56525 0.1069 0.77925 0.32075 0.21385 0.214 0.32075 0.47375 0.32075 0.77925v3.4c0 0.21665 -0.07085 0.39585 -0.2125 0.5375s-0.32085 0.2125 -0.5375 0.2125h-0.5v3.5c0 0.2125 -0.07185 0.3906 -0.2155 0.53425 -0.14385 0.14385 -0.322 0.21575 -0.5345 0.21575h-2c-0.2125 0 -0.3906 -0.0719 -0.53425 -0.21575 -0.14385 -0.14365 -0.21575 -0.32175 -0.21575 -0.53425v-6.825l-1.25 1.325c-0.08335 0.08335 -0.17085 0.14585 -0.2625 0.1875 -0.09165 0.04165 -0.19775 0.0625 -0.31825 0.0625h-0.9235c-0.14715 0 -0.2819 -0.03725 -0.40425 -0.11175 -0.12235 -0.07465 -0.2195 -0.1791 -0.2915 -0.31325l-3.05 -6.15v11.825c0 0.2125 -0.07185 0.3906 -0.2155 0.53425 -0.14385 0.14385 -0.322 0.21575 -0.5345 0.21575h-2.5c-0.2125 0 -0.3906 -0.0719 -0.53425 -0.21575 -0.143835 -0.14365 -0.21575 -0.32175 -0.21575 -0.53425Z"
-                    stroke-width="0.5"></path>
+                    stroke="#000000"
+                    d="M3.5 24v-6.5a2 2 0 0 0 -2 -2l0 -8s1.5 -1 4 -1a8.891 8.891 0 0 1 2.251 0.286M10.501 24v-5.5H7v-0.25l0.072 -0.15A25 25 0 0 0 9.5 7.352v-0.329a8.58 8.58 0 0 1 3 -0.523c1.288 0 2.311 0.266 3 0.523v0.329a25.004 25.004 0 0 0 0.116 2.406M20.75 24l0 -3.426c0 -1.146 0.784 -2.074 1.75 -2.074l0 -6.463S21.187 11 19 11c-2.188 0 -3.5 1.037 -3.5 1.037l0 6.463c0.967 0 1.75 0.929 1.75 2.074V24M5.35 4.5s-1.6 -1 -1.6 -2.25a1.747 1.747 0 1 1 3.496 0C7.246 3.5 5.65 4.5 5.65 4.5h-0.3Zm7 0s-1.6 -1 -1.6 -2.25a1.747 1.747 0 1 1 3.496 0c0 1.25 -1.596 2.25 -1.596 2.25h-0.3ZM18.873 9S17.5 8.125 17.5 7.031c0 -0.845 0.672 -1.531 1.502 -1.531s1.498 0.686 1.498 1.531C20.5 8.125 19.13 9 19.13 9h-0.257Z"
+                    stroke-width="1.5"></path>
                 </svg>
-                Día del Padre
-              </button>
-
-              <button
-                onclick="showSection('dia-madre')"
-                class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-primary/80 cursor-pointer"
-                id="btn-dia-madre"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                  height="24"
-                  width="24"
-                >
-                  <g id="walker--disability-walker">
-                    <path
-                      id="Vector 662"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m0.844727 13 0.892853 -2.5m3.52844 0L5.2661 13"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector 663"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M7.65328 6.97015c-0.72083 -0.13559 -1.76402 -0.60793 -2.24947 -1.02179"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector 660"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9.35742 7.5h1.14278c0.6164 0 1.1 0.3 1.5 1.5 0.2412 0.72356 0.6977 2.0551 0.8172 2.4814"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector 661"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12.2328 9.7915h-0.8548c-0.7206 0 -1.38547 0.3877 -1.74045 1.0148l-0.41053 0.7252"
-                      stroke-width="1"></path>
-                    <path
-                      id="Rectangle 150"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.10591 6.58503C2.18751 5.68734 2.94017 5 3.84156 5v0C4.86639 5 5.67 5.87998 5.57722 6.9006L5.25 10.5h-3.5l0.35591 -3.91497Z"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M8.88852 13.143c0.47454 0 0.85923 -0.3847 0.85923 -0.8592 0 -0.4746 -0.38469 -0.8592 -0.85923 -0.8592 -0.47454 0 -0.85922 0.3846 -0.85922 0.8592 0 0.4745 0.38468 0.8592 0.85922 0.8592Z"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector_2"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12.596 13.143c0.4746 0 0.8593 -0.3847 0.8593 -0.8592 0 -0.4746 -0.3847 -0.8592 -0.8593 -0.8592 -0.4745 0 -0.8592 0.3846 -0.8592 0.8592 0 0.4745 0.3847 0.8592 0.8592 0.8592Z"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector_3"
-                      stroke="#000000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4 5c1.12 0 1.75 -0.63 1.75 -1.75S5.12 1.5 4 1.5s-1.75 0.63 -1.75 1.75S2.88 5 4 5Z"
-                      stroke-width="1"></path>
-                  </g>
-                </svg>
-                Día de la Madre
+                Día del Padre/Madre
               </button>
 
               <button
@@ -334,9 +263,10 @@ const christmasGiftsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
                 </h2>
               </div>
               <p class="text-lg text-gray-600 mb-8">
-                Bolsos únicos y personalizados para todas las ocasiones. Desde
-                bolsos de playa hasta mochilas escolares, cada diseño refleja la
-                personalidad y estilo de quien lo lleva.
+                Bolsos únicos y personalizados para todas las ocasiones. Cada
+                diseño refleja la personalidad y estilo de quien lo lleva,
+                ideales para quienes buscan exclusividad y un diseño hecho a
+                medida.
               </p>
 
               <div
@@ -358,135 +288,46 @@ const christmasGiftsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
               </div>
             </div>
 
-            <!-- Día del Padre Section -->
-            <div id="section-dia-padre" class="content-section hidden">
+            <!-- Día del Padre y la Madre Section -->
+            <div id="section-dia-padreMadre" class="content-section hidden">
               <div class="flex items-center justify-center gap-3 mb-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  height="36"
-                  width="36"
+                  id="Changin-Room-Family--Streamline-Guidance-Free"
+                  height="30"
+                  width="30"
                 >
+                  <desc>
+                    Changin Room Family Streamline Icon:
+                    https://streamlinehq.com
+                  </desc>
                   <path
-                    fill="currentColor"
-                    d="M6.502 5.8248c-0.50135 0 -0.93115 -0.1785 -1.2895 -0.5355 -0.358335 -0.356995 -0.5375 -0.78616 -0.5375 -1.287495 0 -0.501335 0.1785 -0.931165 0.5355 -1.2895 0.357 -0.358335 0.78615 -0.5375 1.2875 -0.5375 0.50135 0 0.93115 0.1785 1.2895 0.5355 0.35835 0.357 0.5375 0.786165 0.5375 1.2875 0 0.501335 -0.1785 0.931165 -0.5355 1.289495 -0.357 0.35835 -0.78615 0.5375 -1.2875 0.5375Zm10.873 5.675c-0.41665 0 -0.77085 -0.14585 -1.0625 -0.4375 -0.29165 -0.29165 -0.4375 -0.64585 -0.4375 -1.0625 0 -0.41665 0.14585 -0.77085 0.4375 -1.0625 0.29165 -0.29165 0.64585 -0.4375 1.0625 -0.4375 0.41665 0 0.77085 0.14585 1.0625 0.4375 0.29165 0.29165 0.4375 0.64585 0.4375 1.0625 0 0.41665 -0.14585 0.77085 -0.4375 1.0625 -0.29165 0.29165 -0.64585 0.4375 -1.0625 0.4375Zm-12.625 9.75v-6.5h-1c-0.2125 0 -0.390585 -0.0719 -0.53425 -0.21575C3.071915 14.3904 3 14.2123 3 13.9998v-5.5c0 -0.4125 0.146915 -0.76565 0.44075 -1.0595 0.293665 -0.29365 0.64675 -0.4405 1.05925 -0.4405h3.8c0.29085 0 0.55515 0.075 0.793 0.225 0.238 0.15 0.42365 0.35835 0.557 0.625l3.4 6.95 1.825 -1.95c0.1 -0.11665 0.21965 -0.20415 0.359 -0.2625 0.13915 -0.05835 0.28615 -0.0875 0.441 -0.0875h3.225c0.3055 0 0.56525 0.1069 0.77925 0.32075 0.21385 0.214 0.32075 0.47375 0.32075 0.77925v3.4c0 0.21665 -0.07085 0.39585 -0.2125 0.5375s-0.32085 0.2125 -0.5375 0.2125h-0.5v3.5c0 0.2125 -0.07185 0.3906 -0.2155 0.53425 -0.14385 0.14385 -0.322 0.21575 -0.5345 0.21575h-2c-0.2125 0 -0.3906 -0.0719 -0.53425 -0.21575 -0.14385 -0.14365 -0.21575 -0.32175 -0.21575 -0.53425v-6.825l-1.25 1.325c-0.08335 0.08335 -0.17085 0.14585 -0.2625 0.1875 -0.09165 0.04165 -0.19775 0.0625 -0.31825 0.0625h-0.9235c-0.14715 0 -0.2819 -0.03725 -0.40425 -0.11175 -0.12235 -0.07465 -0.2195 -0.1791 -0.2915 -0.31325l-3.05 -6.15v11.825c0 0.2125 -0.07185 0.3906 -0.2155 0.53425 -0.14385 0.14385 -0.322 0.21575 -0.5345 0.21575h-2.5c-0.2125 0 -0.3906 -0.0719 -0.53425 -0.21575 -0.143835 -0.14365 -0.21575 -0.32175 -0.21575 -0.53425Z"
-                    stroke-width="0.5"></path>
+                    stroke="#000000"
+                    d="M3.5 24v-6.5a2 2 0 0 0 -2 -2l0 -8s1.5 -1 4 -1a8.891 8.891 0 0 1 2.251 0.286M10.501 24v-5.5H7v-0.25l0.072 -0.15A25 25 0 0 0 9.5 7.352v-0.329a8.58 8.58 0 0 1 3 -0.523c1.288 0 2.311 0.266 3 0.523v0.329a25.004 25.004 0 0 0 0.116 2.406M20.75 24l0 -3.426c0 -1.146 0.784 -2.074 1.75 -2.074l0 -6.463S21.187 11 19 11c-2.188 0 -3.5 1.037 -3.5 1.037l0 6.463c0.967 0 1.75 0.929 1.75 2.074V24M5.35 4.5s-1.6 -1 -1.6 -2.25a1.747 1.747 0 1 1 3.496 0C7.246 3.5 5.65 4.5 5.65 4.5h-0.3Zm7 0s-1.6 -1 -1.6 -2.25a1.747 1.747 0 1 1 3.496 0c0 1.25 -1.596 2.25 -1.596 2.25h-0.3ZM18.873 9S17.5 8.125 17.5 7.031c0 -0.845 0.672 -1.531 1.502 -1.531s1.498 0.686 1.498 1.531C20.5 8.125 19.13 9 19.13 9h-0.257Z"
+                    stroke-width="1.5"></path>
                 </svg>
-                Día del Padre
+                <h2 class="text-3xl font-bold text-gray-800">
+                  Día del Padre y la Madre
+                </h2>
               </div>
               <p class="text-lg text-gray-600 mb-8">
-                Regalos especiales para papá en su día. Desde tazas
-                personalizadas hasta botellas con mensajes emotivos, creamos
-                detalles únicos que expresan todo el amor y gratitud hacia el
-                padre especial en tu vida.
+                Regalos especiales para mamá y papá, pensados para emocionar.
+                Desde tazas y botellas personalizadas hasta detalles únicos que
+                reflejan todo el amor y agradecimiento hacia quienes lo dan
+                todo.
               </p>
               <div
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
               >
                 {
-                  fatherGiftsOrder.map((index) => (
+                  parentsGiftsOrder.map((index) => (
                     <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
                       <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
                         <Image
-                          src={fatherGifts[index].image}
-                          alt={fatherGifts[index].alt}
-                          class="object-cover w-full h-full"
-                        />
-                      </div>
-                    </div>
-                  ))
-                }
-              </div>
-            </div>
-
-            <!-- Día de la Madre Section -->
-            <div id="section-dia-madre" class="content-section hidden">
-              <div class="flex items-center justify-center gap-3 mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                  height="36"
-                  width="36"
-                >
-                  <g id="walker--disability-walker">
-                    <path
-                      id="Vector 662"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m0.844727 13 0.892853 -2.5m3.52844 0L5.2661 13"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector 663"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M7.65328 6.97015c-0.72083 -0.13559 -1.76402 -0.60793 -2.24947 -1.02179"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector 660"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9.35742 7.5h1.14278c0.6164 0 1.1 0.3 1.5 1.5 0.2412 0.72356 0.6977 2.0551 0.8172 2.4814"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector 661"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12.2328 9.7915h-0.8548c-0.7206 0 -1.38547 0.3877 -1.74045 1.0148l-0.41053 0.7252"
-                      stroke-width="1"></path>
-                    <path
-                      id="Rectangle 150"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.10591 6.58503C2.18751 5.68734 2.94017 5 3.84156 5v0C4.86639 5 5.67 5.87998 5.57722 6.9006L5.25 10.5h-3.5l0.35591 -3.91497Z"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M8.88852 13.143c0.47454 0 0.85923 -0.3847 0.85923 -0.8592 0 -0.4746 -0.38469 -0.8592 -0.85923 -0.8592 -0.47454 0 -0.85922 0.3846 -0.85922 0.8592 0 0.4745 0.38468 0.8592 0.85922 0.8592Z"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector_2"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12.596 13.143c0.4746 0 0.8593 -0.3847 0.8593 -0.8592 0 -0.4746 -0.3847 -0.8592 -0.8593 -0.8592 -0.4745 0 -0.8592 0.3846 -0.8592 0.8592 0 0.4745 0.3847 0.8592 0.8592 0.8592Z"
-                      stroke-width="1"></path>
-                    <path
-                      id="Vector_3"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4 5c1.12 0 1.75 -0.63 1.75 -1.75S5.12 1.5 4 1.5s-1.75 0.63 -1.75 1.75S2.88 5 4 5Z"
-                      stroke-width="1"></path>
-                  </g>
-                </svg>
-                Día de la Madre
-              </div>
-              <p class="text-lg text-gray-600 mb-8">
-                Detalles únicos y emotivos para mamá. Cada regalo está diseñado
-                con cariño para expresar todo el amor y agradecimiento hacia la
-                mujer más especial de tu vida.
-              </p>
-
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
-              >
-                {
-                  motherGiftsOrder.map((index) => (
-                    <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
-                      <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
-                        <Image
-                          src={motherGifts[index].image}
-                          alt={motherGifts[index].alt}
+                          src={parentsGifts[index].image}
+                          alt={parentsGifts[index].alt}
                           class="object-cover w-full h-full"
                         />
                       </div>
@@ -542,12 +383,15 @@ const christmasGiftsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
                     stroke-miterlimit="10"
                     stroke-width="1"></path>
                 </svg>
-                Navidad
+                <h2 class="text-3xl font-bold text-gray-800">
+                  Regalos de Navidad
+                </h2>
               </div>
               <p class="text-lg text-gray-600 mb-8">
-                Regalos navideños únicos y personalizados. Desde tazas con
-                motivos navideños hasta botellas especiales, creamos la magia de
-                la Navidad en cada detalle.
+                Regalos navideños únicos y personalizados que llenan de ilusión
+                cada rincón. Desde coronas de Reyes Magos hechas a medida hasta
+                cartas mágicas, guantes bordados y calcetines con nombre, creamos
+                detalles especiales que hacen que la Navidad cobre vida.
               </p>
 
               <div

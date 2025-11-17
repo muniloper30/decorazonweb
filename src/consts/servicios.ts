@@ -23,7 +23,7 @@ export const servicios = [
     url: "/Celebraciones",
     desc:
       "Diseñamos ambientes únicos y personalizados para que cada momento se convierta en un recuerdo inolvidable.",
-    tags: ["Revelaciones de sexo", "Babyshowers", "Cumpleaños", "Comuniones"],
+    tags: ["Revelaciones de sexo", "Babyshowers", "Cumpleaños", "Bautizos y Comuniones"],
     objectPos: "object-center",
   },
   {
@@ -32,8 +32,8 @@ export const servicios = [
     title: "Papelería",
     url: "/Papeleria",
     desc:
-      "Botellas personalizadas, manteles, etiquetas, cartelería y decoración temática para aportar un toque exclusivo a tu celebración.",
-    tags: ["Botellas", "Manteles", "Recordatorios", "Chocolatinas"],
+      "Botellas personalizadas, diferentes snacks personalizados, manteles, etiquetas, cartelería y decoración temática para aportar un toque exclusivo a tu celebración.",
+    tags: ["Botellas", "Papas", "Chocolatinas" , "Pringles", "Chupa chups" , "Nutellas"],
     objectPos: "object-center",
   },
   {
@@ -43,7 +43,7 @@ export const servicios = [
     url: "/DetallesRegalos",
     desc:
       "Detalles únicos para el Día de la Madre, del Padre, Navidad u otras fechas. Pequeños recuerdos que transmiten cariño.",
-    tags: ["Tazas", "Botellas", "Cajas regalo", "Vinilos"],
+    tags: ["Tazas", "Botellas", "Cajas regalo", "Navidad", "Bolsos"],
     objectPos: "object-center",
   },
 ];
