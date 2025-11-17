@@ -5,6 +5,7 @@ import { cupAndBottles } from "../consts/cupAndBottles";
 import { bagsGallery } from "../consts/bagsGallery";
 import { fatherGifts } from "../consts/fatherGifts";
 import { motherGifts } from "../consts/motherGifts";
+import { christmasGifts } from "../consts/christmasGifts";
 
 // Orden concreto de imágenes que ya usabas
 const cupOrder = [
@@ -12,7 +13,8 @@ const cupOrder = [
 ];
 const bagsOrder = [0, 1, 2, 3, 4, 5, 7, 6, 8, 9, 10, 11, 12, 13, 14];
 const fatherGiftsOrder = [0, 1, 2];
-const motherGiftsOrder = [0, 1, 2 ,3, 4, 5];
+const motherGiftsOrder = [0, 1, 2, 3, 4, 5];
+const christmasGiftsOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 ---
 
 <Layout>
@@ -245,51 +247,6 @@ const motherGiftsOrder = [0, 1, 2 ,3, 4, 5];
                     stroke-width="1"></path>
                 </svg>
                 Navidad
-              </button>
-
-              <button
-                onclick="showSection('san-valentin')"
-                class="w-full flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-semibold transition-all duration-300 hover:bg-primary/80 cursor-pointer"
-                id="btn-san-valentin"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="-0.5 -0.5 16 16"
-                  height="24"
-                  width="24"
-                >
-                  <path
-                    d="M9.8125 3.33125a2.78125 2.78125 0 0 0 -2.325 1.25 2.79375 2.79375 0 0 0 -5.11875 1.5375c0 4.1875 5.11875 5.58125 5.11875 5.58125s5.1125 -1.39375 5.1125 -5.58125a2.7875 2.7875 0 0 0 -2.7875 -2.7875Z"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m2.70625 12.29375 4.78125 -4.78125"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m11.375 3.625 2.6875 -2.6875"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m11.66875 0.9375 2.39375 0 0 2.39375"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m0.3125 12.29375 2.39375 0 0 2.39375"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                </svg>
-                San Valentín
               </button>
             </nav>
           </div>
@@ -596,236 +553,19 @@ const motherGiftsOrder = [0, 1, 2 ,3, 4, 5];
               <div
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
               >
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🎅</div>
-                      <p>Regalo navideño</p>
+                {
+                  christmasGiftsOrder.map((index) => (
+                    <div class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl">
+                      <div class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center">
+                        <Image
+                          src={christmasGifts[index].image}
+                          alt={christmasGifts[index].alt}
+                          class="object-cover w-full h-full"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🎁</div>
-                      <p>Detalle navideño</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🌟</div>
-                      <p>Regalo especial</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- San Valentín Section -->
-            <div id="section-san-valentin" class="content-section hidden">
-              <div class="flex items-center justify-center gap-3 mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="-0.5 -0.5 16 16"
-                  height="36"
-                  width="36"
-                >
-                  <path
-                    d="M9.8125 3.33125a2.78125 2.78125 0 0 0 -2.325 1.25 2.79375 2.79375 0 0 0 -5.11875 1.5375c0 4.1875 5.11875 5.58125 5.11875 5.58125s5.1125 -1.39375 5.1125 -5.58125a2.7875 2.7875 0 0 0 -2.7875 -2.7875Z"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m2.70625 12.29375 4.78125 -4.78125"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m11.375 3.625 2.6875 -2.6875"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m11.66875 0.9375 2.39375 0 0 2.39375"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                  <path
-                    d="m0.3125 12.29375 2.39375 0 0 2.39375"
-                    fill="none"
-                    stroke="#000000"
-                    stroke-miterlimit="10"
-                    stroke-width="1"></path>
-                </svg>
-                San Valentín
-              </div>
-              <p class="text-lg text-gray-600 mb-8">
-                Regalos románticos y personalizados para el Día de San Valentín.
-                Cada detalle está diseñado para expresar el amor y crear
-                momentos inolvidables con tu pareja.
-              </p>
-
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
-              >
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">💕</div>
-                      <p>Regalo romántico</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🌹</div>
-                      <p>Detalle especial</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">💝</div>
-                      <p>Regalo personalizado</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Graduaciones Section -->
-            <div id="section-graduaciones" class="content-section hidden">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">
-                🎓 Graduaciones
-              </h2>
-              <p class="text-lg text-gray-600 mb-8">
-                Celebra los logros académicos con regalos únicos y
-                personalizados. Desde tazas conmemorativas hasta botellas
-                especiales, cada detalle honra este momento tan importante.
-              </p>
-
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
-              >
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🎓</div>
-                      <p>Regalo graduación</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🏆</div>
-                      <p>Detalle conmemorativo</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">🎉</div>
-                      <p>Regalo especial</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Bautizos Section -->
-            <div id="section-bautizos" class="content-section hidden">
-              <h2 class="text-3xl font-bold text-gray-800 mb-6">👶 Bautizos</h2>
-              <p class="text-lg text-gray-600 mb-8">
-                Regalos especiales para el bautizo de tu pequeño. Desde tazas
-                conmemorativas hasta botellas personalizadas, cada detalle
-                celebra este momento sagrado y especial en la vida del bebé.
-              </p>
-
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
-              >
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">👶</div>
-                      <p>Regalo bautizo</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">⛪</div>
-                      <p>Detalle religioso</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="aspect-w-16 aspect-h-12 rounded-2xl shadow-lg overflow-hidden transition duration-700 ease-out transform hover:scale-105 hover:shadow-2xl"
-                >
-                  <div
-                    class="w-full h-64 bg-gray-100 rounded-2xl flex items-center justify-center"
-                  >
-                    <div class="text-center text-gray-500">
-                      <div class="text-6xl mb-4">💝</div>
-                      <p>Regalo especial</p>
-                    </div>
-                  </div>
-                </div>
+                  ))
+                }
               </div>
             </div>
           </div>
