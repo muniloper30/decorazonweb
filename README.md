@@ -1,4 +1,5 @@
-# Decorazón
+![Decorazón](./src/assets/decorazonTitle.png)
+
 
 **Decorazón** es una plataforma web para la gestión y presentación de servicios de decoración de eventos.  
 El proyecto está orientado a facilitar la creación, organización y difusión de celebraciones personalizadas como:
