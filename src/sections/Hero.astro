@@ -6,45 +6,43 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
 ---
 
 <section id="Inicio" class="grid grid-cols-1 md:grid-cols-[1fr_15fr] gap-0">
-<aside class="flex flex-col md:flex-col items-center gap-3 pt-6 md:pt-14">
-  <!-- Texto -->
-  <p class="text-xs md:transform md:rotate-270 md:text-sm md:mt-5">
-    CONTÁCTANOS
-  </p>
+  <aside class="flex flex-col md:flex-col items-center gap-3 pt-6 md:pt-14">
+    <!-- Texto -->
+    <p class="text-xs md:transform md:rotate-270 md:text-sm md:mt-5">
+      CONTÁCTANOS
+    </p>
 
-  <!-- HR (solo en desktop) -->
-  <hr class="hidden md:block border-l border-gray-300 h-20 mt-12" />
+    <!-- HR (solo en desktop) -->
+    <hr class="hidden md:block border-l border-gray-300 h-20 mt-12" />
 
-  <!-- Redes -->
-  <div class="flex flex-row md:flex-col gap-4 mt-2 md:mt-4">
-    <a
-      href="https://www.instagram.com/decorazonlp/"
-      target="_blank"
-      aria-label="Instagram"
-      class="hover:scale-110 transition-transform"
-    >
-      <img src="/icons/instagram.svg" alt="Instagram" class="w-5 h-5" />
-    </a>
-    <a
-      href="https://wa.me/34634931297"
-      target="_blank"
-      aria-label="WhatsApp"
-      class="hover:scale-110 transition-transform"
-    >
-      <img src="/icons/whatsapp.svg" alt="WhatsApp" class="w-5 h-5" />
-    </a>
-    <a
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=decorazonlaspalmas@gmail.com"
-      target="_blank"
-      aria-label="Gmail"
-      class="hover:scale-110 transition-transform"
-    >
-      <img src="/icons/gmail.svg" alt="Gmail" class="w-5 h-5" />
-    </a>
-  </div>
-</aside>
-
-  
+    <!-- Redes -->
+    <div class="flex flex-row md:flex-col gap-4 mt-2 md:mt-4">
+      <a
+        href="https://www.instagram.com/decorazonlp/"
+        target="_blank"
+        aria-label="Instagram"
+        class="hover:scale-110 transition-transform"
+      >
+        <img src="/icons/instagram.svg" alt="Instagram" class="w-5 h-5" />
+      </a>
+      <a
+        href="https://wa.me/34634931297"
+        target="_blank"
+        aria-label="WhatsApp"
+        class="hover:scale-110 transition-transform"
+      >
+        <img src="/icons/whatsapp.svg" alt="WhatsApp" class="w-5 h-5" />
+      </a>
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=decorazonlaspalmas@gmail.com"
+        target="_blank"
+        aria-label="Gmail"
+        class="hover:scale-110 transition-transform"
+      >
+        <img src="/icons/gmail.svg" alt="Gmail" class="w-5 h-5" />
+      </a>
+    </div>
+  </aside>
 
   <!-- Contenido principal Hero -->
   <div
@@ -67,16 +65,25 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
 
     <!-- Contenedor video -->
     <div
-      class="relative w-full h-[45svh] max-w-[900px] md:w-[900px] md:h-[500px] "
+      class="relative w-full h-[45svh] max-w-[900px] md:w-[900px] md:h-[500px]"
     >
-      <video autoplay muted loop playsinline class="w-full h-full object-cover border-3 border-gray-200 rounded-xl dark:border-gray-500">
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/hero-poster.jpg"
+        class="w-full h-full object-cover border-3 border-gray-200 rounded-xl dark:border-gray-500"
+      >
         <source src="/videoHero.mp4" type="video/mp4" />
         Tu navegador no soporta la etiqueta de video.
       </video>
 
       <!-- Texto superpuesto -->
       <p
-        class="text-stroke absolute bottom-3  md:bottom-[70px] md:left-[-80px] flex items-center justify-center text-white text-2xl md:text-6xl lg:text-7xl font-bold text-start p-2 md:p-4"
+        class="text-stroke absolute bottom-3 md:bottom-[70px] md:left-[-80px] flex items-center justify-center text-white text-2xl md:text-6xl lg:text-7xl font-bold text-start p-2 md:p-4"
       >
         Decoraciones <br />
         con amor para <br />
