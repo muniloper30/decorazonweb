@@ -78,7 +78,6 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
         class="w-full h-full object-cover border-3 border-gray-200 rounded-xl dark:border-gray-500"
       >
         <source src="/videoHero.mp4" type="video/mp4" />
-        Tu navegador no soporta la etiqueta de video.
       </video>
 
       <!-- Texto superpuesto -->
@@ -116,4 +115,22 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
       </a>
     </div>
   </div>
+
+  
 </section>
+
+<script>
+  function restartHeroVideo() {
+    const v = document.getElementById("heroVideo") as HTMLVideoElement | null;
+    if (!v) return;
+    v.muted = true;
+    v.playsInline = true;
+    v.pause();
+    v.currentTime = 0;
+    v.load();
+    v.play().catch(() => {});
+  }
+  document.addEventListener("astro:page-load", restartHeroVideo);
+  document.addEventListener("astro:after-swap", restartHeroVideo);
+</script>
+
