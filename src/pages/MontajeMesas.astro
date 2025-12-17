@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import bgService from "../assets/bgHero.jpg";
+import { Image } from "astro:assets";
+import { serviceGallery } from "@/consts/serviceGallery";
 ---
 
 <Layout>
@@ -38,9 +39,9 @@ import bgService from "../assets/bgHero.jpg";
             hover:scale-150 hover:shadow-2xl"
         >
           <div class="aspect-w-19 aspect-h-12">
-            <img
-              src="/src/assets/servicios/montajeS.webp"
-              alt="Montaje Pequeño (S)"
+            <Image
+              src={serviceGallery[0].image}
+              alt={serviceGallery[0].alt}
               class="object-cover w-full h-full"
             />
           </div>
@@ -50,8 +51,8 @@ import bgService from "../assets/bgHero.jpg";
               El Montaje S es un set de decoración para eventos, perfecto para
               espacios reducidos, que incluye aro/paneles para photocall y hasta
               3 mesas. <br /><br />
-              Precio entre 150€ y 200€ (no incluye papelería, (Si el evento es fuera de Las Palmas +20€ de
-              gasolina)).
+              Precio entre 150€ y 200€ (no incluye papelería, (Si el evento es fuera
+              de Las Palmas +20€ de gasolina)).
             </p>
           </div>
         </div>
@@ -63,9 +64,9 @@ import bgService from "../assets/bgHero.jpg";
             hover:scale-150 hover:shadow-2xl"
         >
           <div class="aspect-w-16 aspect-h-12">
-            <img
-              src="/src/assets/servicios/montajeM.webp"
-              alt="Montaje Mediano (M)"
+            <Image
+                src={serviceGallery[1].image}
+                alt={serviceGallery[1].alt}
               class="object-cover w-full h-full"
             />
           </div>
@@ -88,9 +89,9 @@ import bgService from "../assets/bgHero.jpg";
             hover:scale-150 hover:shadow-2xl"
         >
           <div class="aspect-w-16 aspect-h-12">
-            <img
-              src="/src/assets/servicios/montajeL.webp"
-              alt="Montaje Grande (L)"
+            <Image
+              src={serviceGallery[2].image}
+              alt={serviceGallery[2].alt}
               class="object-cover w-full h-full"
             />
           </div>
@@ -120,23 +121,22 @@ import bgService from "../assets/bgHero.jpg";
               hover:scale-150 hover:shadow-2xl"
           >
             <div class="aspect-w-12 aspect-h-10">
-              <img
-                src="/src/assets/servicios/montajeXL.webp"
-                alt="Montaje Extra Grande (XL)"
+              <Image
+                src={serviceGallery[3].image}
+                alt={serviceGallery[3].alt}
                 class="object-cover w-full h-full"
               />
             </div>
             <div class="p-6">
               <h3 class="text-2xl font-bold text-gray-800 mb-3">Montaje XL</h3>
               <p class="text-gray-600 mb-4">
-                El Montaje XL es un set de decoración de 5 a 6 metros que incluye
-                paneles, globos, suelo, 4 figuras grandes y decoración con
-                papelería. Se añaden recordatorios para invitados y 10-12 unidades
-                de 7 tipos de snacks <br> <br>
-                Precio 450€ (Si el evento es fuera de Las Palmas +20€ de
-                gasolina).
+                El Montaje XL es un set de decoración de 5 a 6 metros que
+                incluye paneles, globos, suelo, 4 figuras grandes y decoración
+                con papelería. Se añaden recordatorios para invitados y 10-12
+                unidades de 7 tipos de snacks <br />
+                <br />
+                Precio 450€ (Si el evento es fuera de Las Palmas +20€ de gasolina).
               </p>
-              
             </div>
           </div>
 
@@ -147,9 +147,9 @@ import bgService from "../assets/bgHero.jpg";
               hover:scale-150 hover:shadow-2xl"
           >
             <div class="aspect-[16/12] w-full overflow-hidden">
-              <img
-                src="/src/assets/gallery/gallery_29.webp"
-                alt="Montaje con Globos"
+              <Image
+                src={serviceGallery[4].image}
+                alt={serviceGallery[4].alt}
                 class="object-cover w-full h-full"
               />
             </div>
@@ -187,9 +187,9 @@ import bgService from "../assets/bgHero.jpg";
           class="transition duration-700 ease-out transform
             hover:scale-130 hover:-translate-x-12 hover:shadow-2xl"
         >
-          <img
-            src="/src/assets/servicios/mesasInfantiles.webp"
-            alt="Mesas Infantiles Decoradas"
+          <Image
+            src={serviceGallery[5].image}
+            alt={serviceGallery[5].alt}
             class="w-full h-full object-cover rounded-2xl shadow-lg"
           />
         </div>
