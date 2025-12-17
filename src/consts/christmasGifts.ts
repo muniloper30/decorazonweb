@@ -11,6 +11,9 @@ import GalleryImg10 from '@/assets/giftGallery/christmas/christmas_10.webp';
 import GalleryImg11 from '@/assets/giftGallery/christmas/christmas_11.webp';
 import GalleryImg12 from '@/assets/giftGallery/christmas/christmas_12.webp';
 import GalleryImg13 from '@/assets/giftGallery/christmas/christmas_13.webp';
+import GalleryImg14 from '@/assets/giftGallery/christmas/christmas_14.webp';
+import GalleryImg15 from '@/assets/giftGallery/christmas/christmas_15.webp';
+
 
 export const christmasGifts = [
     { image: GalleryImg1, alt: 'Regalos navideños personalizados', thumb: 'thumb1' },
@@ -26,4 +29,6 @@ export const christmasGifts = [
     { image: GalleryImg11, alt: 'Regalos navideños personalizados', thumb: 'thumb11' },
     { image: GalleryImg12, alt: 'Regalos navideños personalizados', thumb: 'thumb12' },
     { image: GalleryImg13, alt: 'Regalos navideños personalizados', thumb: 'thumb13' },
+    { image: GalleryImg14, alt: 'Regalos navideños personalizados', thumb: 'thumb14' },
+    { image: GalleryImg15, alt: 'Regalos navideños personalizados', thumb: 'thumb15' },
 ];
