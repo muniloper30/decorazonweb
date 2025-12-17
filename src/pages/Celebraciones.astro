@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { serviceGallery } from "@/consts/serviceGallery";
 ---
 
 <Layout>
@@ -36,9 +38,9 @@ import Layout from "../layouts/Layout.astro";
               hover:scale-105 hover:shadow-2xl"
         >
           <div class="aspect-w-16 aspect-h-12">
-            <img
-              src="/src/assets/servicios/revelacion.webp"
-              alt="Decoración de Revelación de Sexo"
+            <Image
+                src={serviceGallery[6].image}
+                alt={serviceGallery[6].alt}
               class="w-full h-64 object-cover"
             />
           </div>
@@ -66,9 +68,9 @@ import Layout from "../layouts/Layout.astro";
               hover:scale-105 hover:shadow-2xl"
         >
           <div class="aspect-w-16 aspect-h-12">
-            <img
-              src="/src/assets/servicios/babyshower.webp"
-              alt="Decoración de Babyshower"
+            <Image
+              src={serviceGallery[7].image}
+              alt={serviceGallery[7].alt}
               class="w-full h-64 object-cover"
             />
           </div>
@@ -94,9 +96,9 @@ import Layout from "../layouts/Layout.astro";
               hover:scale-105 hover:shadow-2xl"
         >
           <div class="aspect-w-16 aspect-h-12">
-            <img
-              src="/src/assets/servicios/cumpleanios1.webp"
-              alt="Decoración de Cumpleaños"
+            <Image
+              src={serviceGallery[8].image}
+              alt={serviceGallery[8].alt}
               class="w-full h-64 object-cover"
             />
           </div>
@@ -122,9 +124,9 @@ import Layout from "../layouts/Layout.astro";
             hover:scale-105 hover:shadow-2xl"
         >
           <div class="aspect-w-16 aspect-h-12">
-            <img
-              src="/src/assets/gallery/gallery_46.webp"
-              alt="Decoración de Bautizos y Comuniones"
+            <Image
+              src={serviceGallery[9].image}
+              alt={serviceGallery[9].alt}
               class="w-full h-64 object-cover"
             />
           </div>
