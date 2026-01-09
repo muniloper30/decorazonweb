@@ -38,11 +38,16 @@ import cansImg from "../assets/galleryCans/cans_05.webp";
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Botellas personalizadas -->
-        <a class="group relative block rounded-2xl overflow-hidden shadow-2xl">
+        <a
+          href="/Gallery#galleryBottles"
+          class="group relative block rounded-2xl overflow-hidden shadow-2xl"
+        >
           <Image
             src={bottlesImg}
             alt="Botellas personalizadas"
             class="w-full h-72 object-cover"
+            widths={[320, 640, 768]}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div
             class="absolute inset-0 bg-black/30 transition group-hover:bg-black/40"
@@ -59,21 +64,25 @@ import cansImg from "../assets/galleryCans/cans_05.webp";
             >
               BOTELLAS PERSONALIZADAS
             </h3>
-            <button
+            <span
               class="border-1 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer"
-              onclick="window.location.href='/Gallery#galleryBottles'"
             >
               VER
-            </button>
+            </span>
           </div>
         </a>
 
         <!-- Papas personalizadas -->
-        <a class="group relative block rounded-2xl overflow-hidden shadow-lg">
+        <a
+          href="/Gallery#galleryPotatoes"
+          class="group relative block rounded-2xl overflow-hidden shadow-lg"
+        >
           <Image
             src={potatoesImg}
             alt="Papas personalizadas"
             class="w-full h-72 object-cover"
+            widths={[320, 640, 768]}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div
             class="absolute inset-0 bg-black/30 transition group-hover:bg-black/40"
@@ -90,21 +99,25 @@ import cansImg from "../assets/galleryCans/cans_05.webp";
             >
               PAPAS PERSONALIZADAS
             </h3>
-            <button
+            <span
               class="border-1 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer"
-              onclick="window.location.href='/Gallery#galleryPotatoes'"
             >
               VER
-            </button>
+            </span>
           </div>
         </a>
 
         <!-- Chupachups personalizados -->
-        <a class="group relative block rounded-2xl overflow-hidden shadow-lg">
+        <a
+          href="/Gallery#galleryLollipops"
+          class="group relative block rounded-2xl overflow-hidden shadow-lg"
+        >
           <Image
             src={lollipopImg}
             alt="Chupachups personalizados"
             class="w-full h-72 object-cover"
+            widths={[320, 640, 768]}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div
             class="absolute inset-0 bg-black/30 transition group-hover:bg-black/40"
@@ -121,21 +134,25 @@ import cansImg from "../assets/galleryCans/cans_05.webp";
             >
               CHUPACHUPS PERSONALIZADOS
             </h3>
-            <button
+            <span
               class="border-1 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer"
-              onclick="window.location.href='/Gallery#galleryLollipops'"
             >
               VER
-            </button>
+            </span>
           </div>
         </a>
 
         <!-- Nutellas personalizadas -->
-        <a class="group relative block rounded-2xl overflow-hidden shadow-lg">
+        <a
+          href="/Gallery#galleryNutellas"
+          class="group relative block rounded-2xl overflow-hidden shadow-lg"
+        >
           <Image
             src={nutellasImg}
             alt="Nutellas personalizadas"
             class="w-full h-72 object-cover"
+            widths={[320, 640, 768]}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div
             class="absolute inset-0 bg-black/30 transition group-hover:bg-black/40"
@@ -152,21 +169,25 @@ import cansImg from "../assets/galleryCans/cans_05.webp";
             >
               NUTELLAS PERSONALIZADAS
             </h3>
-            <button
+            <span
               class="border-1 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer"
-              onclick="window.location.href='/Gallery#galleryNutellas'"
             >
               VER
-            </button>
+            </span>
           </div>
         </a>
 
         <!-- Chocolatinas -->
-        <a class="group relative block rounded-2xl overflow-hidden shadow-lg">
+        <a
+          href="/Gallery#galleryChocolates"
+          class="group relative block rounded-2xl overflow-hidden shadow-lg"
+        >
           <Image
             src={chocolatesImg}
             alt="Chocolatinas personalizadas"
             class="w-full h-72 object-cover"
+            widths={[320, 640, 768]}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div
             class="absolute inset-0 bg-black/30 transition group-hover:bg-black/40"
@@ -183,23 +204,25 @@ import cansImg from "../assets/galleryCans/cans_05.webp";
             >
               CHOCOLATINAS
             </h3>
-            <button
+            <span
               class="border-1 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer"
-              onclick="window.location.href='/Gallery#galleryChocolates'"
             >
               VER
-            </button>
+            </span>
           </div>
         </a>
 
         <!-- Latas -->
         <a
+          href="/Gallery#galleryCans"
           class="group relative block rounded-2xl overflow-hidden shadow-lg lg:col-span-1 md:col-span-2 col-span-1"
         >
           <Image
             src={cansImg}
             alt="Latas de Pringles personalizadas"
             class="w-full h-72 object-cover"
+            widths={[320, 640, 768]}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div
             class="absolute inset-0 bg-black/30 transition group-hover:bg-black/40"
@@ -216,12 +239,11 @@ import cansImg from "../assets/galleryCans/cans_05.webp";
             >
               LATAS PRINGLES
             </h3>
-            <button
+            <span
               class="border-1 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-300 cursor-pointer"
-              onclick="window.location.href='/Gallery#galleryCans'"
             >
               VER
-            </button>
+            </span>
           </div>
         </a>
       </div>
