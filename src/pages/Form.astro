@@ -164,8 +164,11 @@ import Layout from "../layouts/Layout.astro";
         <!-- Sección: Notas finales -->
         <div>
           <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">
-            Notas adicionales 
-            <span class="text-sm">(Si sólo quieres un regalo o detalle de otra sección dejalo en este campo)</span>
+            Notas adicionales
+            <span class="text-sm"
+              >(Si sólo quieres un regalo o detalle de otra sección dejalo en
+              este campo)</span
+            >
           </h3>
           <textarea
             rows="5"
@@ -243,55 +246,42 @@ import Layout from "../layouts/Layout.astro";
   </style>
 </Layout>
 
-<script is:inline>
-  // Función para enviar email usando EmailJS directamente
-  async function sendEmail(form) {
-    // Cargar EmailJS si no está disponible
-    if (typeof emailjs === 'undefined') {
-      await new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    }
-    
-    // Inicializar EmailJS
-    emailjs.init("612p8l6--jl1x8Irv");
-    
-    const serviceId = "default_service";
-    const templateId = "template_ap3arcv";
-    
-    return emailjs.sendForm(serviceId, templateId, form);
-  }
+<script>
+  import { sendEmail } from "../utils/emailService";
 
   // Función para inicializar el formulario
   function initializeForm() {
-    const form = document.getElementById("form");
-    const btn = document.getElementById("button");
+    const form = document.getElementById("form") as HTMLFormElement | null;
+    const btn = document.getElementById("button") as HTMLButtonElement | null;
     const toast = document.getElementById("toast-success");
     const dismissBtn = document.getElementById("dismiss-toast");
 
     // Verificar que todos los elementos existan
     if (!form || !btn || !toast || !dismissBtn) {
-      console.log('Elementos del formulario no encontrados, reintentando...');
-      setTimeout(initializeForm, 200);
+      // console.log('Elementos del formulario no encontrados, reintentando...');
+      // setTimeout(initializeForm, 200);
       return;
     }
 
-    // Limpiar event listeners previos si existen
+    // Limpiar event listeners previos si existen (aunque en módulos esto es menos necesario, buena práctica para prevenir duplicados si se llama multiples veces)
+    // @ts-ignore
     if (form._emailjsHandler) {
+      // @ts-ignore
       form.removeEventListener("submit", form._emailjsHandler);
     }
+    // @ts-ignore
     if (dismissBtn._emailjsDismissHandler) {
-      dismissBtn.removeEventListener("click", dismissBtn._emailjsDismissHandler);
+      // @ts-ignore
+      dismissBtn.removeEventListener(
+        "click",
+        dismissBtn._emailjsDismissHandler,
+      );
     }
 
     // Crear nuevos handlers
-    const submitHandler = async (event) => {
+    const submitHandler = async (event: Event) => {
       event.preventDefault();
-      
+
       // Deshabilitar botón y cambiar texto
       btn.disabled = true;
       btn.textContent = "Enviando...";
@@ -299,29 +289,28 @@ import Layout from "../layouts/Layout.astro";
 
       try {
         await sendEmail(form);
-        
+
         // Éxito
         btn.textContent = "¡Enviado!";
         btn.classList.remove("opacity-75", "cursor-not-allowed");
         btn.classList.add("bg-emerald-500");
-        
+
         // Mostrar toast de éxito
         toast.classList.remove("hidden");
         setTimeout(() => toast.classList.add("hidden"), 7000);
-        
+
         // Limpiar formulario
         form.reset();
-        
+
         // Restaurar botón después de 3 segundos
         setTimeout(() => {
           btn.disabled = false;
           btn.textContent = "Enviar solicitud";
           btn.classList.remove("bg-emerald-500");
         }, 3000);
-        
       } catch (err) {
         // Error
-        console.error('Error enviando email:', err);
+        console.error("Error enviando email:", err);
         btn.disabled = false;
         btn.textContent = "Enviar solicitud";
         btn.classList.remove("opacity-75", "cursor-not-allowed");
@@ -332,61 +321,18 @@ import Layout from "../layouts/Layout.astro";
     const dismissHandler = () => toast.classList.add("hidden");
 
     // Guardar referencias a los handlers para poder limpiarlos después
+    // @ts-ignore
     form._emailjsHandler = submitHandler;
+    // @ts-ignore
     dismissBtn._emailjsDismissHandler = dismissHandler;
 
     // Agregar event listeners
     form.addEventListener("submit", submitHandler);
     dismissBtn.addEventListener("click", dismissHandler);
-    
-    console.log('Formulario inicializado correctamente');
+
+    console.log("Formulario inicializado correctamente");
   }
 
   // Inicializar cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeForm);
-  } else {
-    initializeForm();
-  }
-
-  // Observer para detectar cambios en el DOM (útil para SPAs)
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'childList') {
-        // Verificar si el formulario está presente
-        const form = document.getElementById("form");
-        if (form && !form._emailjsInitialized) {
-          form._emailjsInitialized = true;
-          setTimeout(initializeForm, 100);
-        }
-      }
-    });
-  });
-
-  // Observar cambios en el body
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-
-  // Reinicializar en múltiples eventos
-  window.addEventListener('pageshow', () => {
-    setTimeout(initializeForm, 100);
-  });
-
-  window.addEventListener('focus', () => {
-    setTimeout(initializeForm, 100);
-  });
-
-  // Para Astro específicamente - detectar cambios de ruta
-  let currentPath = window.location.pathname;
-  setInterval(() => {
-    if (window.location.pathname !== currentPath) {
-      currentPath = window.location.pathname;
-      if (currentPath.includes('Form') || currentPath.includes('form')) {
-        setTimeout(initializeForm, 200);
-      }
-    }
-  }, 500);
+  document.addEventListener("astro:page-load", initializeForm);
 </script>
-

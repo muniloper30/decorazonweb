@@ -46,20 +46,37 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
 
   <!-- Contenido principal Hero -->
   <div
-    class="relative p-4 md:mb-2 md:mr-17 md:-ml-5 h-[80svh] md:h-[800px] flex items-center justify-center flex-col"
-    style={`background-image:url(${bgHero.src}); background-size:cover; background-position:right center;`}
+    class="relative p-4 md:mb-2 md:mr-17 md:-ml-5 h-[80svh] md:h-[800px] flex items-center justify-center flex-col overflow-hidden"
   >
+    <!-- Background Image Optimized -->
+    <Image
+      src={bgHero}
+      alt="Fondo decorativo"
+      class="absolute inset-0 w-full h-full object-cover -z-10"
+      widths={[320, 768, 1024, 1920]}
+      sizes="100vw"
+      formats={["avif", "webp"]}
+      loading="eager"
+      fetchpriority="high"
+    />
+
     <!-- Logos -->
-    <div class="absolute top-5 w-full flex justify-between px-4 md:px-10">
+    <div class="absolute top-5 w-full flex justify-between px-4 md:px-10 z-10">
       <Image
         class="h-auto w-24 md:w-[150px]"
         src={logoBlack}
         alt="Logo Decorazon"
+        loading="eager"
+        widths={[96, 150]}
+        sizes="(max-width: 768px) 96px, 150px"
       />
       <Image
         class="h-auto w-24 md:w-[150px]"
         src={LogoDecorazon}
         alt="Logo Decorazon"
+        loading="eager"
+        widths={[96, 150]}
+        sizes="(max-width: 768px) 96px, 150px"
       />
     </div>
 
@@ -115,8 +132,6 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
       </a>
     </div>
   </div>
-
-  
 </section>
 
 <script>
@@ -133,4 +148,3 @@ import LogoDecorazon from "../assets/logoDcorazon.png";
   document.addEventListener("astro:page-load", restartHeroVideo);
   document.addEventListener("astro:after-swap", restartHeroVideo);
 </script>
-
