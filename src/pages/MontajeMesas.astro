@@ -30,9 +30,10 @@ import { serviceGallery } from "@/consts/serviceGallery";
         </p>
       </div>
 
-      <!-- Primera fila: Montajes S, M, L -->
+      <!-- Primera fila: Montajes XS, S, M -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-        <!-- Montaje S -->
+
+ <!-- Montaje XS -->
         <div
           class="bg-white rounded-2xl shadow-lg overflow-hidden
             transition duration-700 ease-out transform
@@ -46,12 +47,35 @@ import { serviceGallery } from "@/consts/serviceGallery";
             />
           </div>
           <div class="p-6">
+            <h3 class="text-2xl font-bold text-gray-800 mb-3">Montaje XS</h3>
+            <p class="text-gray-600 mb-4">
+             El Montaje XS es un set de decoración para eventos, perfecto para espacios pequeños, 
+             que incluye 1 panel (mucha gente lo utiliza como photocall) y 1 sola mesa. <br /><br />
+           Precio desde 150€ (no incluye papelería, (gasolina aparte dependiendo de la ubicación del evento)).
+            </p>
+          </div>
+        </div>
+
+        <!-- Montaje S -->
+        <div
+          class="bg-white rounded-2xl shadow-lg overflow-hidden
+            transition duration-700 ease-out transform
+            hover:scale-150 hover:shadow-2xl"
+        >
+          <div class="aspect-w-19 aspect-h-12">
+            <Image
+              src={serviceGallery[1].image}
+              alt={serviceGallery[1].alt}
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <div class="p-6">
             <h3 class="text-2xl font-bold text-gray-800 mb-3">Montaje S</h3>
             <p class="text-gray-600 mb-4">
               El Montaje S es un set de decoración para eventos, perfecto para
               espacios reducidos, que incluye aro/paneles para photocall y hasta
               3 mesas. <br /><br />
-              Precio entre 150€ y 200€ (no incluye papelería, (Si el evento es fuera
+              Precio 200€ (no incluye papelería, (Si el evento es fuera
               de Las Palmas +20€ de gasolina)).
             </p>
           </div>
@@ -65,8 +89,8 @@ import { serviceGallery } from "@/consts/serviceGallery";
         >
           <div class="aspect-w-16 aspect-h-12">
             <Image
-                src={serviceGallery[1].image}
-                alt={serviceGallery[1].alt}
+                src={serviceGallery[2].image}
+                alt={serviceGallery[2].alt}
               class="object-cover w-full h-full"
             />
           </div>
@@ -82,7 +106,14 @@ import { serviceGallery } from "@/consts/serviceGallery";
           </div>
         </div>
 
-        <!-- Montaje L -->
+      </div>
+
+      <!-- Segunda fila: Montajes XL y con Globos centrados -->
+      <div class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+
+
+          <!-- Montaje L -->
         <div
           class="bg-white rounded-2xl shadow-lg overflow-hidden
             transition duration-700 ease-out transform
@@ -90,8 +121,8 @@ import { serviceGallery } from "@/consts/serviceGallery";
         >
           <div class="aspect-w-16 aspect-h-12">
             <Image
-              src={serviceGallery[2].image}
-              alt={serviceGallery[2].alt}
+              src={serviceGallery[3].image}
+              alt={serviceGallery[3].alt}
               class="object-cover w-full h-full"
             />
           </div>
@@ -109,11 +140,8 @@ import { serviceGallery } from "@/consts/serviceGallery";
             </p>
           </div>
         </div>
-      </div>
 
-      <!-- Segunda fila: Montajes XL y con Globos centrados -->
-      <div class="flex justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+
           <!-- Montaje XL -->
           <div
             class="bg-white rounded-2xl shadow-lg overflow-hidden
@@ -122,8 +150,8 @@ import { serviceGallery } from "@/consts/serviceGallery";
           >
             <div class="aspect-w-12 aspect-h-10">
               <Image
-                src={serviceGallery[3].image}
-                alt={serviceGallery[3].alt}
+                src={serviceGallery[4].image}
+                alt={serviceGallery[4].alt}
                 class="object-cover w-full h-full"
               />
             </div>
@@ -148,8 +176,8 @@ import { serviceGallery } from "@/consts/serviceGallery";
           >
             <div class="aspect-[16/12] w-full overflow-hidden">
               <Image
-                src={serviceGallery[4].image}
-                alt={serviceGallery[4].alt}
+                src={serviceGallery[5].image}
+                alt={serviceGallery[5].alt}
                 class="object-cover w-full h-full"
               />
             </div>
@@ -172,110 +200,137 @@ import { serviceGallery } from "@/consts/serviceGallery";
     </div>
   </section>
 
-  <!-- Mesas Infantiles -->
-  <section class="py-20 bg-gradient-to-b from-primary/5 to-white">
-    <div class="mx-auto max-w-6xl px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">Mesas Infantiles</h2>
-        <p class="text-lg text-gray-600">
-          Espacios mágicos diseñados especialmente para los más pequeños
-        </p>
-      </div>
+  <section class="py-24 bg-gradient-to-b from-primary/5 to-white">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    
+    <!-- Contenedor Principal Flex -->
+    <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch justify-center">
+      
+      <!-- ================= MESAS INFANTILES ================= -->
+      <div class="flex-1 flex flex-col w-full group">
+        
+        <!-- Título Superior -->
+        <div class="mb-8">
+          <h2 class="text-3xl lg:text-4xl font-light text-gray-800 mb-3 tracking-tight">
+            Mesas <span class="font-bold">Infantiles</span>
+          </h2>
+          <p class="text-gray-500 font-light text-lg">
+            Espacios mágicos diseñados especialmente para los más pequeños.
+          </p>
+        </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div
-          class="transition duration-700 ease-out transform
-            hover:scale-130 hover:-translate-x-12 hover:shadow-2xl"
-        >
+        <!-- Imagen (h-auto evita que se corte) -->
+        <div class="mb-8 rounded-2xl shadow-sm transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-xl overflow-hidden bg-white/50">
           <Image
-            src={serviceGallery[5].image}
-            alt={serviceGallery[5].alt}
-            class="w-full h-full object-cover rounded-2xl shadow-lg"
+            src={serviceGallery[6].image}
+            alt={serviceGallery[6].alt}
+            class="w-full h-auto rounded-2xl"
           />
         </div>
-        <div>
-          <h3 class="text-3xl font-bold text-gray-800 mb-6">
-            ¡Hacemos realidad la fiesta de tus sueños!
+
+        <!-- Contenido -->
+        <div class="flex-1 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Hacemos realidad la fiesta de tus sueños
           </h3>
-          <p class="text-lg text-gray-600 mb-6">
-            Nuestras mesas infantiles están diseñadas para crear momentos
-            mágicos e inolvidables. Cada detalle está pensado para que los niños
-            disfruten al máximo de su celebración.
+          <p class="text-gray-600 font-light mb-8 leading-relaxed">
+            Nuestras mesas infantiles están diseñadas para crear momentos mágicos e inolvidables. Cada detalle está pensado para que los niños disfruten al máximo de su celebración.
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
-              >
-                <svg
-                  class="w-4 h-4 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <span class="text-gray-700">Temáticas personalizadas</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
-              >
-                <svg
-                  class="w-4 h-4 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <span class="text-gray-700">Colores vibrantes</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
-              >
-                <svg
-                  class="w-4 h-4 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <span class="text-gray-700">Elementos interactivos</span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <div
-                class="w-8 h-8 bg-primary rounded-full flex items-center justify-center"
-              >
-                <svg
-                  class="w-4 h-4 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <span class="text-gray-700">Decoración segura</span>
-            </div>
-          </div>
+          
+          <!-- Lista de características minimalista -->
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mt-auto">
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Temáticas personalizadas
+            </li>
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Colores vibrantes
+            </li>
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Elementos interactivos
+            </li>
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Decoración segura
+            </li>
+          </ul>
         </div>
       </div>
+
+      <!-- ================= MESAS DULCES Y SALADOS ================= -->
+      <div class="flex-1 flex flex-col w-full group">
+        
+        <!-- Título Superior -->
+        <div class="mb-8">
+          <h2 class="text-3xl lg:text-4xl font-light text-gray-800 mb-3 tracking-tight">
+            Mesas <span class="font-bold">Dulces y Salados</span>
+          </h2>
+          <p class="text-gray-500 font-light text-lg">
+            Una explosión de sabores y detalles para deleitar a tus invitados.
+          </p>
+        </div>
+
+        <!-- Imagen (h-auto evita que se corte) -->
+        <div class="mb-8 rounded-2xl shadow-sm transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-xl overflow-hidden bg-white/50">
+          <Image
+            src={serviceGallery[7].image}
+            alt={serviceGallery[7].alt}
+            class="w-full h-auto rounded-2xl"
+          />
+        </div>
+
+        <!-- Contenido -->
+        <div class="flex-1 flex flex-col">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">
+            Diseño exclusivo para tu paladar
+          </h3>
+          <p class="text-gray-600 font-light mb-8 leading-relaxed">
+            Nuestras mesas combinan la mejor repostería con opciones saladas gourmet. Cuidamos cada textura y presentación para conseguir un buffet irresistible y a medida.
+          </p>
+          
+          <!-- Lista de características minimalista -->
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mt-auto">
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Variedad gourmet
+            </li>
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Presentación elegante
+            </li>
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Opciones personalizadas
+            </li>
+            <li class="flex items-center text-gray-600 font-light">
+              <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Ingredientes frescos
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- CTA Section -->
   <section class="py-20 bg-primary">
